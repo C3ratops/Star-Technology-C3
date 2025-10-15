@@ -1545,8 +1545,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         .color(0xA78E99)
         .blastTemp(18880, 'highest', VA('uxv'), 600)
         .iconSet(SHINY)
-        .flags(plates, frame, rod, dense_plate, long_rod, gear, foil, small_gear, rotor, no_decomp, no_abs_recipe)
-        .rotorStats(10, 20, 25, 250000);
+        .flags(plates, frame, rod, dense_plate, long_rod, gear, foil, small_gear, rotor, no_decomp, no_abs_recipe);
 
     //DES + PBD Line
     noCompFluid('draconic_hormone_residue',0x6C4D6E);

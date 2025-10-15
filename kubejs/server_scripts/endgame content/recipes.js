@@ -183,6 +183,30 @@ ServerEvents.recipes(event => {
         .duration(50)
         .EUt(16);
 
+    event.shaped('2x kubejs:superdense_assembly_control_casing', [
+        `PGP`,
+        `AFA`,
+        `PGP`
+    ], {
+        P: 'gtceu:double_neutronium_plate',
+        G: 'gtceu:pure_netherite_gear',
+        A: 'gtceu:uhv_robot_arm',
+        F: 'gtceu:zircalloy_4_frame'
+    });
+
+    event.shaped('2x kubejs:superdense_assembly_machine_casing', [
+        `CUC`,
+        `SFE`,
+        `CMC`
+    ], {
+        C: '#gtceu:circuits/uv',
+        U: 'gtceu:uhpic_chip',
+        S: 'gtceu:uhv_sensor',
+        E: 'gtceu:uhv_emitter',
+        M: 'gtceu:uhv_electric_motor',
+        F: 'gtceu:zircalloy_4_frame'
+    });
+
     event.recipes.gtceu.compressor(id('reinforced_brimstone_casing'))
         .itemInputs('16x kubejs:brimstone')
         .itemOutputs('kubejs:reinforced_brimstone_casing')

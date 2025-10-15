@@ -55,14 +55,14 @@ GTCEuStartupEvents.registry('gtceu:machine', event => {
             .where('D', Predicates.blocks('kubejs:nyanium_machine_casing'))
             .where('E', Predicates.blocks('gtceu:titanium_firebox_casing')) //will be start_core:nyanium_firebox_casing
             .where('F', Predicates.blocks('start_core:fusion_casing_mk4'))
-            .where('G', Predicates.blocks('gtceu:assembly_line_casing'))
+            .where('G', Predicates.blocks('kubejs:superdense_assembly_machine_casing'))
             .where('H', Predicates.blocks('start_core:advanced_fusion_coil'))
             .where('I', Predicates.blocks('kubejs:draco_resilient_fusion_glass'))
             .where('J', Predicates.blocks('gtceu:uev_rotor_holder'))
             .where('K', Predicates.blocks('gtceu:palladium_substation'))
             .where('L', Predicates.blocks('kubejs:draco_ware_casing'))
             .where('M', Predicates.blocks('kubejs:nyanium_pipe_casing'))
-            .where('P', Predicates.blocks('gtceu:assembly_line_unit'))
+            .where('P', Predicates.blocks('kubejs:superdense_assembly_control_casing'))
             .where('Q', Predicates.blocks('start_core:uhv_absolute_parallel_hatch')) //Will need to be the threading control hatch
             .where('2', Predicates.heatingCoils()) //will be threading blocks
             .where('0', Predicates.blocks('kubejs:nyanium_machine_casing')

@@ -26,19 +26,19 @@ ServerEvents.recipes(event => {
                 .inputFluids(fluids)
                 .inputFluids(`gtceu:naquadria 576`)
                 .itemOutputs(`1x gtceu:${Tier}_${type}`)
-                .duration(600 / 2)
+                .duration(600)
                 .circuit(circuit)
                 .cleanroom(CleanroomType.getByName('stabilized'))
-                .EUt(eut * 2);
+                .EUt(eut);
             } else {
             event.recipes.gtceu.component_nexus(id(`${Tier}_${type}`))
                 .itemInputs(inputs)
                 .inputFluids(fluids)
                 .itemOutputs(`1x gtceu:${Tier}_${type}`)
-                .duration(600 / 2)
+                .duration(600)
                 .circuit(circuit)
                 .cleanroom(CleanroomType.getByName('stabilized'))
-                .EUt(eut * 2);
+                .EUt(eut);
             }
         }
         componentTypesAssemblyLine('electric_motor',[`1x gtceu:long_magnetic_samarium_rod`,`4x gtceu:long_${Primary}_rod`,`4x gtceu:${Primary}_ring`,`8x gtceu:${Primary}_round`,`64x gtceu:fine_${MechanicalWire}_wire`,`2x gtceu:${Cable}_single_cable`],
