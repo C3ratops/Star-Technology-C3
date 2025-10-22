@@ -172,10 +172,6 @@ ServerEvents.recipes(event => {
     });
 });
 
-
-
-
-
     shapedRecipeRem('ae2:crafting_unit', [
             'HFH',
             'BCB',
