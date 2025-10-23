@@ -1457,7 +1457,7 @@
 				type: "item"
 			}]
 			title: "{ftbquests.chapter.adventures_in_abydos.quest57.title}"
-			x: -1.5d
+			x: 0.5d
 			y: 2.0d
 		}
 		{
@@ -1822,129 +1822,6 @@
 			y: -5.0d
 		}
 		{
-			dependencies: [
-				"2D064F759D13FE4B"
-				"25583D0BF59E1BC8"
-			]
-			description: [
-				"{ftbquests.chapter.adventures_in_abydos.quest75.description1}"
-				""
-				"{ftbquests.chapter.adventures_in_abydos.quest75.description2}"
-				""
-				""
-				"[\"\",{\"underlined\":1,\"translate\":\"ftbquests.chapter.adventures_in_abydos.quest75.rich_description1\",\"clickEvent\":{\"action\":\"change_page\",\"value\":\"2F63F0E239737E38\"}}]"
-			]
-			id: "141911C5DD68CD2A"
-			rewards: [{
-				id: "73B232401A84DDAC"
-				item: "kubejs:coin"
-				type: "item"
-			}]
-			tasks: [{
-				id: "66552A0737028183"
-				item: "start_core:dream_link_node"
-				type: "item"
-			}]
-			x: -0.5d
-			y: 5.0d
-		}
-		{
-			dependencies: ["141911C5DD68CD2A"]
-			description: [
-				"{ftbquests.chapter.adventures_in_abydos.quest76.description1}"
-				""
-				"{ftbquests.chapter.adventures_in_abydos.quest76.description2}"
-				""
-				"{ftbquests.chapter.adventures_in_abydos.quest76.description3}"
-			]
-			id: "659690E81B3E3AE7"
-			rewards: [{
-				count: 2
-				id: "00C995FE80302AE3"
-				item: "kubejs:coin"
-				type: "item"
-			}]
-			shape: "gear"
-			size: 1.5d
-			tasks: [
-				{
-					id: "55F419E4EF98D96F"
-					item: {
-						Count: 1
-						id: "itemfilters:or"
-						tag: {
-							display: {
-								Name: "{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"#FFFFFF\",\"text\":\"UV Wireless Power\"}"
-							}
-							items: [
-								{
-									Count: 1b
-									id: "start_core:uv_2a_dream_link_cover_item"
-								}
-								{
-									Count: 1b
-									id: "start_core:uv_2a_dream_link_energy_hatch"
-								}
-								{
-									Count: 1b
-									id: "start_core:uv_4a_dream_link_energy_hatch"
-								}
-								{
-									Count: 1b
-									id: "start_core:uv_16a_dream_link_energy_hatch"
-								}
-								{
-									Count: 1b
-									id: "start_core:uv_64a_dream_link_energy_hatch"
-								}
-							]
-						}
-					}
-					optional_task: true
-					type: "item"
-				}
-				{
-					id: "6F69C60333996AA1"
-					item: {
-						Count: 1
-						id: "itemfilters:or"
-						tag: {
-							display: {
-								Name: "{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"#FFFFFF\",\"text\":\"UHV Wireless Power\"}"
-							}
-							items: [
-								{
-									Count: 1b
-									id: "start_core:uhv_2a_dream_link_cover_item"
-								}
-								{
-									Count: 1b
-									id: "start_core:uhv_2a_dream_link_energy_hatch"
-								}
-								{
-									Count: 1b
-									id: "start_core:uhv_4a_dream_link_energy_hatch"
-								}
-								{
-									Count: 1b
-									id: "start_core:uhv_16a_dream_link_energy_hatch"
-								}
-								{
-									Count: 1b
-									id: "start_core:uhv_64a_dream_link_energy_hatch"
-								}
-							]
-						}
-					}
-					optional_task: true
-					type: "item"
-				}
-			]
-			title: "{ftbquests.chapter.adventures_in_abydos.quest76.title}"
-			x: 1.5d
-			y: 5.0d
-		}
-		{
 			dependencies: ["652809D17FCE8B11"]
 			description: [
 				"{ftbquests.chapter.adventures_in_abydos.quest77.description1}"
@@ -2213,7 +2090,7 @@
 				item: "gtceu:component_nexus"
 				type: "item"
 			}]
-			x: -2.5d
+			x: -0.5d
 			y: 5.0d
 		}
 		{
@@ -2224,8 +2101,28 @@
 				item: "gtceu:uhv_stabilization_module"
 				type: "item"
 			}]
-			x: -3.5d
-			y: 6.0d
+			x: 1.5d
+			y: 5.0d
+		}
+		{
+			dependencies: [
+				"25583D0BF59E1BC8"
+				"7AC55BA8BDD0F3D2"
+			]
+			description: ["{ftbquests.chapter.draconic_age_part_1.quest67.description1}"]
+			id: "0DFAD40205E5D899"
+			rewards: [{
+				id: "6C05E0C359C06382"
+				item: "kubejs:coin"
+				type: "item"
+			}]
+			tasks: [{
+				id: "18B2CAF419FA5670"
+				item: "start_core:oneiric_relay"
+				type: "item"
+			}]
+			x: -2.5d
+			y: 5.0d
 		}
 	]
 	title: "{ftbquests.chapter.adventures_in_abydos.title}"

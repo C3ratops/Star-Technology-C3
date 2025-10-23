@@ -5,7 +5,7 @@ GTCEuStartupEvents.registry('gtceu:machine', event => {
         .recipeType('electric_blast_furnace')
         .machine((holder) => new $CoiledMulti(holder))
         .recipeModifiers([$StarTRecipeModifiers.THOUGHPUT_BOOSTING, $StarTRecipeModifiers.EBF_OVERCLOCK]) //EBF has subtick so so will this
-        .appearanceBlock(() => Block.getBlock('gtceu:high_temperature_smelting_casing'))
+        .appearanceBlock(GCYMBlocks.CASING_HIGH_TEMPERATURE_SMELTING)
         .pattern(definition => FactoryBlockPattern.start()
             .aisle('AABAA', 'C B C', 'C D C', 'CEEEC', 'C D C', 'C B C', 'AABAA') 
             .aisle('ABBBA', ' FFF ', ' FFF ', 'EFFFE', ' FFF ', ' FFF ', 'ABBBA') 

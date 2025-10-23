@@ -1,9 +1,18 @@
 GTCEuStartupEvents.registry('gtceu:recipe_type', event => {
 
-    event.create('multithreaded_component_synthesis_forge')
-        .category('highly_advanced')
+    event.create('component_synthesis_forge')
+        .category('extremely_advanced')
         .setEUIO('in')
         .setMaxIOSize(15, 1, 5, 0)
+        .setHasResearchSlot(true)
+        .setSound(GTSoundEntries.ASSEMBLER)
+        .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, FillDirection.LEFT_TO_RIGHT)
+        .setMaxTooltips(6);
+
+    event.create('component_part_synthesis_forge')
+        .category('extremely_advanced')
+        .setEUIO('in')
+        .setMaxIOSize(8, 1, 2, 0)
         .setHasResearchSlot(true)
         .setSound(GTSoundEntries.ASSEMBLER)
         .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, FillDirection.LEFT_TO_RIGHT)
@@ -15,8 +24,8 @@ GTCEuStartupEvents.registry('gtceu:machine', event => {
 
     event.create('multithreaded_component_synthesis_forge', 'multiblock')
         .rotationState(RotationState.NON_Y_AXIS)
-        .recipeType('multithreaded_component_synthesis_forge')
-        .recipeModifier(/*StarTModifier.THREADING*/GTRecipeModifiers.OC_NON_PERFECT_SUBTICK)
+        .recipeTypes(['component_synthesis_forge', 'component_part_synthesis_forge'])
+        .recipeModifier(/*StarTModifier.THREADING, */GTRecipeModifiers.OC_NON_PERFECT_SUBTICK)
         .appearanceBlock(() => Block.getBlock('kubejs:nyanium_machine_casing'))
         .pattern(definition => FactoryBlockPattern.start()
             .aisle('           BCBBBCB           ', '            C   C            ', '            C   C            ', '           BCBBBCB           ', '                             ', '                             ', '                             ', '                             ', '                             ', '                             ', '                             ', '                             ', '                             ', '                             ', '                             ', '                             ', '                             ', '                             ', '                             ', '                             ', '                             ', '                             ', '                             ', '                             ', '                             ', '                             ', '                             ', '                             ', '                             ', '                             ', '                             ', '                             ', '                             ', '                             ', '                             ', '                             ', '                             ', '                             ', '                             ', '                             ', '                             ') 

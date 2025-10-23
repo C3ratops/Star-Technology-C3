@@ -3518,7 +3518,10 @@
 			y: 3.0d
 		}
 		{
-			dependencies: ["1AB8A88BA38BC989"]
+			dependencies: [
+				"1AB8A88BA38BC989"
+				"2E34F23A42004285"
+			]
 			hide_dependent_lines: true
 			icon: "start_core:emberheart_nectar_bucket"
 			id: "75C33909E2CD5EC0"

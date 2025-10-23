@@ -20,7 +20,7 @@ GTCEuStartupEvents.registry('gtceu:recipe_type', event => {
 
 GTCEuStartupEvents.registry('gtceu:machine', event => {
 
-    event.create('atomic_sythesis_plant', 'multiblock')
+    event.create('atomic_synthesis_plant', 'multiblock')
         .rotationState(RotationState.NON_Y_AXIS)
         .recipeTypes(['chemical_skip', 'advanced_chemistry', 'absolute_reduction', 'enlightened_chemistry'])
         .recipeModifiers([GTRecipeModifiers.PARALLEL_HATCH, $StarTRecipeModifiers.THOUGHPUT_BOOSTING, GTRecipeModifiers.OC_PERFECT_SUBTICK])
@@ -36,7 +36,10 @@ GTCEuStartupEvents.registry('gtceu:machine', event => {
             .aisle('  ABABA BBB', '  ADGGAHAFA', '  AFGGF IFK', '  ADGGAHAFA', '  AAAAA BBB', '           ', '   D E     ', '           ', '   H       ', '           ', '           ') 
             .aisle('  ABABA BBB', '  AEDEADABA', '  LFDFAHAAA', '  AEDEADABA', '  AEAEA BBB', '   E E     ', '   HDE     ', '   H       ', '   H       ', '           ', '           ') 
             .aisle('  AAAA     ', '  AAHA     ', '  A@HA     ', '  AAHA     ', '  AAAA     ', '           ', '           ', '           ', '           ', '           ', '           ') 
-            .where('A', Predicates.blocks('kubejs:cattomolymer_casing'))
+            .where('A', Predicates.blocks('kubejs:cattomolymer_casing').setMaxGlobalLimited(200)
+                .or(Predicates.autoAbilities(definition.getRecipeTypes()))
+                .or(Predicates.abilities(PartAbility.MAINTENANCE).setExactLimit(1))
+                .or(Predicates.abilities(PartAbility.PARALLEL_HATCH).setMaxGlobalLimited(1)))
             .where('B', Predicates.blocks('gtceu:heat_vent'))
             .where('C', Predicates.blocks('kubejs:nyanium_machine_engine_intake_casing'))
             .where(' ', Predicates.any())

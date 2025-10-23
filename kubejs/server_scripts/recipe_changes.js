@@ -301,7 +301,6 @@ ServerEvents.recipes(event => {
     casing('blue_steel','blue_steel' ,'kubejs');
     casing('red_steel','red_steel' ,'kubejs');
     casing('enriched_naquadah_machine','enriched_naquadah' ,'kubejs');
-    casing('nyanium_machine','nyanium' ,'kubejs');
 
     const casingDouble = (type,material,casing_id) => {
         event.shaped(Item.of(`${casing_id}:${type}_casing`,2), [
@@ -327,6 +326,7 @@ ServerEvents.recipes(event => {
     casingDouble('noble_mixing','astrenalloy_nx','kubejs');
     casingDouble('quake_proof','thacoloy_nq_42x','kubejs');
     casingDouble('superalloy','lepton_coalescing_superalloy','kubejs');
+    casingDouble('nyanium_machine','nyanium' ,'kubejs');
 
     event.recipes.gtceu.assembler(id('silicone_rubber_casing'))
         .itemInputs('gtceu:solid_machine_casing') 
@@ -337,7 +337,7 @@ ServerEvents.recipes(event => {
         .circuit(6);
 
     const firebox = (type,material,casing_id) => {
-        event.shaped(Item.of(`2x ${casing_id}:${type}_firebox_casing`), [
+        event.shaped(`2x ${casing_id}:${type}_firebox_casing`, [
             'PRP',
             'RFR',
             'PRP'
@@ -345,14 +345,14 @@ ServerEvents.recipes(event => {
             P: `gtceu:${material}_plate`,
             F: `gtceu:${material}_frame`,
             R: `gtceu:${material}_rod`
-        }).id(`start:${type}_firebox_casing`);
+        }).id(`${casing_id}:${type}_firebox_casing`);
     };
 
     firebox('enriched_naquadah','enriched_naquadah','start_core');
-    // firebox('nyanium','nyanium','start_core')
+    // firebox('nyanium','nyanium','kubejs')
 
     const gearbox = (type,material,casing_id) => {
-        event.shaped(Item.of(`2x ${casing_id}:${type}_gearbox`), [
+        event.shaped(`2x ${casing_id}:${type}_gearbox`, [
             'PHP',
             'GFG',
             'PWP'
@@ -362,7 +362,7 @@ ServerEvents.recipes(event => {
             G:  `gtceu:${material}_gear`,
             H: '#forge:tools/hammers',
             W: '#forge:tools/wrenches'
-        }).id(`start:${type}_gearbox`);
+        }).id(`${casing_id}:${type}_gearbox`);
     
         event.recipes.gtceu.assembler(id(`${material}_gearbox`))
             .itemInputs(`4x gtceu:${material}_plate`,`2x gtceu:${material}_gear`,`gtceu:${material}_frame`)
@@ -376,7 +376,7 @@ ServerEvents.recipes(event => {
     gearbox('nyanium','nyanium','kubejs');
 
     const pipe = (type,material,pipe,casing_id) => {
-        event.shaped(Item.of(`2x ${casing_id}:${type}_pipe_casing`), [
+        event.shaped(`2x ${casing_id}:${type}_pipe_casing`, [
             'PLP',
             'LFL',
             'PLP'
@@ -384,14 +384,14 @@ ServerEvents.recipes(event => {
             P:  `gtceu:${material}_plate`,
             F:  `gtceu:${material}_frame`,
             L:  `gtceu:${pipe}_normal_fluid_pipe`
-        }).id(`start:${type}_pipe_casing`);
+        }).id(`${casing_id}:${type}_pipe_casing`);
     };
 
     pipe('enriched_naquadah','enriched_naquadah','enriched_naquadah','kubejs');
     pipe('nyanium','nyanium','nyanium','kubejs');
 
     const engine_intake = (type,material,pipe,casing_id,used_casing) => {
-        event.shaped(Item.of(`2x ${casing_id}:${type}_engine_intake_casing`), [
+        event.shaped(`2x ${casing_id}:${type}_engine_intake_casing`, [
             'PHP',
             'RFR',
             'PWP'
@@ -401,7 +401,7 @@ ServerEvents.recipes(event => {
             R:  `gtceu:${material}_rotor`,
             H: '#forge:tools/hammers',
             W: '#forge:tools/wrenches'
-        }).id(`start:${type}_engine_intake_casing`);
+        }).id(`${casing_id}:${type}_engine_intake_casing`);
 
         event.recipes.gtceu.assembler(id( `${type}_engine_intake_casing`))
             .itemInputs(`2x gtceu:${material}_rotor`,`4x gtceu:${pipe}_normal_fluid_pipe`,`${used_casing}_casing`)
@@ -411,7 +411,7 @@ ServerEvents.recipes(event => {
     };
 
     engine_intake('enriched_naquadah','enriched_naquadah','enriched_naquadah','start_core','kubejs:enriched_naquadah_machine');
-    // engine_intake('nyanium','nyanium','nyanium','start_core','kubejs:nyanium_machine');
+    // engine_intake('nyanium','nyanium','nyanium','kubejs','kubejs:nyanium_machine');
 
     ['blackstone','calcite','tuff','dripstone_block'].forEach(stone => {
     event.recipes.gtceu.rock_breaker(id(`${stone}`))

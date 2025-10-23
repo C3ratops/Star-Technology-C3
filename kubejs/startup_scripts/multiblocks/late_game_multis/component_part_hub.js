@@ -35,6 +35,7 @@ GTCEuStartupEvents.registry('gtceu:machine', event => {
                 .or(Predicates.abilities(PartAbility.IMPORT_ITEMS).setMaxGlobalLimited(8).setPreviewCount(0))
                 .or(Predicates.abilities(PartAbility.EXPORT_ITEMS).setMaxGlobalLimited(1).setPreviewCount(0))
                 .or(Predicates.abilities(PartAbility.INPUT_ENERGY).setMaxGlobalLimited(1).setPreviewCount(0))
+                .or(Predicates.abilities(PartAbility.OPTICAL_DATA_RECEPTION).setMaxGlobalLimited(1).setPreviewCount(0))
                 .or(Predicates.blocks('gtceu:uhv_stabilization_module').setExactLimit(1)))
             .where(' ', Predicates.any())
             .where('C', Predicates.blocks('kubejs:nyanium_machine_firebox_casing'))

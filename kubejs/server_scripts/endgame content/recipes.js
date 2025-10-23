@@ -183,6 +183,13 @@ ServerEvents.recipes(event => {
         .duration(50)
         .EUt(16);
 
+    event.recipes.gtceu.assembler(id('titanic_blasting_casing'))
+        .itemInputs('6x gtceu:titan_steel_plate', 'gtceu:naquadah_alloy_frame')
+        .itemOutputs('2x kubejs:titanic_blasting_casing')
+        .circuit(6)
+        .duration(50)
+        .EUt(16);
+
     event.shaped('2x kubejs:superdense_assembly_control_casing', [
         `PGP`,
         `AFA`,

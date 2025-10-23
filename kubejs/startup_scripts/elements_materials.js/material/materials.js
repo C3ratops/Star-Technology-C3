@@ -349,7 +349,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         }
     }
 
-    const compIngotLiquidSeccolor = (name, elements, color1, color2, icon, blasting, flags) => {
+    const compIngotLiquidSecColor = (name, elements, color1, color2, icon, blasting, flags) => {
         if (blasting.includes(blasting[0])){
             event.create(name).ingot().fluid().components(elements).color(color1).secondaryColor(color2).iconSet(icon).flags(flags).blastTemp(blasting[0], blasting[1], blasting[2], blasting[3]);
         } else {
@@ -866,9 +866,9 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
         conductor('iron_selenide_over_strontium_titanium_oxide', ['1x iron_selenide', '1x strontium_titanium_oxide'], 0x66ff33, DULL, [10299, 'highest', VA('uv'), 2500], [V('uhv'), 4, 12, false], [fine_wire, bolt_and_screw]);
 
     // Misc
-    compIngotLiquid('indium_tin_lead_cadmium_soldering_alloy', ['14x indium', '3x tin', '2x lead', '1x cadmium'], 0xa6a6a6, DULL, [], []);
+    compDustLiquid('indium_tin_lead_cadmium_soldering_alloy', ['14x indium', '3x tin', '2x lead', '1x cadmium'], 0xa6a6a6, []);
 
-    compIngotLiquid('naquadated_soldering_alloy', ['3x tin', '18x indium', '6x silver', '4x lanthanum', '3x cerium', '3x naquadah', '1x trinium', '1x bismuth', '2x lead'], 0x8790A1, DULL, [], []);
+    compDustLiquid('naquadated_soldering_alloy', ['3x tin', '18x indium', '6x silver', '4x lanthanum', '3x cerium', '3x naquadah', '1x trinium', '1x bismuth', '2x lead'], 0x8790A1, []);
 
     compIngotLiquid('thorium_plut_duranide_241',  ['4x thorium', '1x duranium', '3x plutonium_241'], 0xEC342A, [], [10199, 'highest', VA('uv'), 850], [fine_wire, no_decomp, foil]);
 
@@ -1166,12 +1166,12 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
 
     compDustIcon('boron_trioxide', ['2x boron', '3x oxygen'], 0xDACABB, DULL, []);
 
-    // Hastelloy X Upgrade
+    // Ultimate Multis
     compIngotLiquid('astrenalloy_nx', ['1x hastelloy_x', '4x enriched_naquadah', '3x zirconium', '6x tantalum_carbide', '4x osmiridium', '3x boron_nitride'], 0x63478e, SHINY, [10090, 'highest', VA('uv'), 2800], [plates, rod, frame]);
     
-    // Incoloy MA-956 upgrade
     compIngotLiquid('thacoloy_nq_42x', ['6x incoloy_ma_956', '4x enriched_naquadah', '2x niobium_titanium', '4x osmiridium', '4x thallium_tungstate'], 0x467624, SHINY, [10090, 'highest', VA('zpm'), 3400], [plates, rod, frame]);
 
+    compIngotLiquidSecColor('titan_steel', ['7x tritanium', '3x maraging_steel_300', '2x enriched_naquadah', '3x titanium_tungsten_carbide', '1x boron_nitride'], 0x9a445d, 0x2d095a, METALLIC, [8990, 'highest', VHA('uv'), 2400], [plates, rod, frame, small_gear, gear, round, ring, bolt_and_screw, long_rod, foil, dense_plate]);
 
     // Akreyium Line
     elemFluid('utopian_akreyrium', 'akreyrium', 0xffffff, []);
@@ -1415,7 +1415,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
 
     compLiquid('nether_star_concentrate', ['1x mystery'], 0xeeeeee, [no_decomp]);
 
-    compIngotLiquidSeccolor('aurourium', ['1x mystery'], 0x5d44de, 0xde44ce, SHINY, [], [no_decomp, fine_wire, no_smelt]);
+    compIngotLiquidSecColor('aurourium', ['1x mystery'], 0x5d44de, 0xde44ce, SHINY, [], [no_decomp, fine_wire, no_smelt]);
        
     conductor('cerium_tritelluride', ['1x cerium', '3x tellurium'], 0x6d8B5d, DULL, [11699, 'highest', VA('uhv'), 1800], [V('uev'), 6, 16, false], [bolt_and_screw,spring,small_spring]);
 
@@ -1597,7 +1597,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
     compDust('thallium_antimonide',['1x thallium','1x antimony'],0xADC5E3,[])
 
     event.create('rhenate_w') 
-        .components('2x rhenium', '5x tungsten', '1x neutronium', '18x gold', '7x neodymium') 
+        .components('2x rhenium', '5x tungsten', '1x neutronium', '18x rose_gold', '7x neodymium') 
         .ingot()
         .fluid()
         .plasma()
