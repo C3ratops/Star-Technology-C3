@@ -204,7 +204,7 @@ ServerEvents.recipes(event => {
 
     event.recipes.gtceu.industrial_barrel_aqueous(id(`warped_nylium_spores`))
         .itemInputs('exnihilosequentia:crimson_nylium_spores', 'gtceu:warped_dust')
-        .inputFluids(`exnihilosequentia:witch_water 500`)
+        .inputFluids(`gtceu:ender_air 500`)
         .itemOutputs(`exnihilosequentia:warped_nylium_spores`)
         .duration(200)
         .dimension('minecraft:the_nether')
