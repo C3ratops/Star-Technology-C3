@@ -196,7 +196,7 @@ ServerEvents.recipes(event => {
 
     event.recipes.gtceu.industrial_barrel_aqueous(id(`crimson_nylium_spores`))
         .itemInputs('exnihilosequentia:mycelium_spores', 'mysticalagriculture:nether_agglomeratio')
-        .inputFluids(`exnihilosequentia:witch_water 500`)
+        .inputFluids(`gtceu:nether_air 500`)
         .itemOutputs(`exnihilosequentia:crimson_nylium_spores`)
         .duration(200)
         .dimension('minecraft:the_nether')
