@@ -1054,7 +1054,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
 
     compDust('seaborgium_cerium_tricarbon_tetrakis_orthosilicate_linked_dipolonium_diplatinum_tris_pyrophosphate', ['1x seaborgium_cerium_tricarbon_tetrakis_orthosilicate', '1x dipolonium_diplatinum_tris_pyrophosphate'], 0x526A48, [no_decomp]);
 
-    compDust('flerovium_hexaoxide_octafluorosulfatoplutonate_enriched_rare_earth', ['1x flerovium_hexaoxide_octafluorosulfatoplutonate', '6x mystery'], 0x6A4852, [no_decomp]);
+    compDust('flerovium_hexaoxide_octafluorosulfatoplutonate_enriched_rare_earth', ['3x flerovium_hexaoxide_octafluorosulfatoplutonate', '4x mystery'], 0x6A4852, [no_decomp]);
  
     // PEDOT:PSS plastic Line
     compLiquid('maleic_anhydride', ['4x carbon', '2x hydrogen', '3x oxygen'], 0xAAA099, [no_decomp]);
