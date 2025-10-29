@@ -80,7 +80,7 @@ ServerEvents.recipes(event => {
         .duration(1800)
         .stationResearch(
             researchRecipeBuilder => researchRecipeBuilder
-                .researchStack(Item.of('gtceu:alloy_blast_smelter'))
+                .researchStack(Item.of('gtceu:super_abs'))
                 .EUt(GTValues.VHA[GTValues.UEV])
                 .CWUt(192)
             )

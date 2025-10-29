@@ -617,6 +617,85 @@ ServerEvents.recipes(event => {
     });
     event.recipes.create.item_application('gtceu:large_rock_crusher', ['gtceu:hv_rock_crusher', 'kubejs:multiblock_upgrade_kit']).id('start:item_application/large_rock_crusher');
     
+    event.shaped('gtceu:super_electric_ore_factory', [
+        'GCG',
+        'PHP',
+        'BPB'
+    ], {
+        G: 'gtceu:blue_steel_gear',
+        P: 'gtceu:black_steel_plate',
+        C: '#gtceu:circuits/hv',
+        B: 'gtceu:gold_single_cable',
+        H: 'gtceu:hv_machine_hull'
+    });
+
+    event.shaped('gtceu:super_cutter', [
+        'CBC',
+        'TSS',
+        'PVB'
+    ], {
+        S: 'gtceu:blue_steel_buzz_saw_blade',
+        T: 'gtceu:hv_cutter',
+        C: '#gtceu:circuits/ev',
+        B: 'gtceu:gold_single_cable',
+        P: 'gtceu:hv_electric_pump',
+        V: 'gtceu:hv_conveyor_module'
+    });
+
+    event.shaped('gtceu:super_implosion_compressor', [
+        'PRP',
+        'CIC',
+        'BTB'
+    ], {
+        P: 'gtceu:dense_obsidian_plate',
+        R: 'kubejs:highly_enriched_uranium_fuel_rod',
+        C: '#gtceu:circuits/luv',
+        I: 'gtceu:implosion_compressor',
+        B: 'gtceu:niobium_titanium_double_cable',
+        T: 'gtceu:iv_electric_piston'
+    });
+
+    event.shaped('gtceu:super_ebf', [
+        'BPB',
+        'CFC',
+        'RSR'
+    ], {
+        P: 'gtceu:double_black_steel_plate',
+        R: 'gtceu:small_tungsten_spring',
+        C: '#gtceu:circuits/iv',
+        F: 'gtceu:electric_blast_furnace',
+        B: 'gtceu:aluminium_double_cable',
+        S: 'gtceu:ev_sensor'
+    });
+
+    event.recipes.gtceu.assembly_line(id('super_vacuum_freezer'))
+        .itemInputs('gtceu:aluminium_frame','2x #gtceu:circuits/luv','4x gtceu:double_kanthal_plate','2x gtceu:iv_fluid_regulator',
+            '8x gtceu:stainless_steel_tiny_fluid_pipe','4x gtceu:niobium_titanium_screw')
+        .inputFluids('gtceu:soldering_alloy 432')
+        .itemOutputs('gtceu:super_vacuum_freezer')
+        ["scannerResearch(java.util.function.UnaryOperator)"](
+            researchRecipeBuilder => researchRecipeBuilder
+                .researchStack(Item.of('gtceu:vacuum_freezer'))
+                .duration(1800)
+                .EUt(GTValues.VHA[GTValues.EV])
+        )
+        .duration(400)
+        .EUt(GTValues.VHA[GTValues.IV]);
+
+    event.recipes.gtceu.assembly_line(id('super_abs'))
+        .itemInputs('gtceu:zpm_alloy_smelter','2x #gtceu:circuits/zpm','2x gtceu:double_naquadah_plate','2x gtceu:zpm_emitter',
+            '4x gtceu:europium_spring','8x gtceu:vanadium_gallium_single_cable','4x gtceu:naquadria_screw')
+        .inputFluids('gtceu:soldering_alloy 1008', 'gtceu:polybenzimidazole 432')
+        .itemOutputs('gtceu:super_abs')
+        .stationResearch(
+        researchRecipeBuilder => researchRecipeBuilder
+            .researchStack(Item.of('gtceu:alloy_blast_smelter'))
+            .EUt(GTValues.VHA[GTValues.LuV])
+            .CWUt(12)
+        )
+        .duration(400)
+        .EUt(GTValues.VHA[GTValues.ZPM]);       
+
     // Coil Changes
 
     event.remove({output: /gtceu:.*coil_block/});
@@ -627,6 +706,14 @@ ServerEvents.recipes(event => {
         .itemOutputs('gtceu:molybdenum_disilicide_coil_block')
         .duration(500)
         .EUt(1920);
+
+    event.recipes.gtceu.assembler(id('rhenotax_coil'))
+        .itemInputs('gtceu:astrenalloy_nx_frame','8x gtceu:rhenate_w_double_wire','16x gtceu:tantalum_carbide_foil',
+            '32x gtceu:hafnide_ito_ceramic_ring','64x gtceu:neutronium_silicon_carbide_foil')
+        .inputFluids('gtceu:dragonsteel 144')
+        .itemOutputs('gtceu:rhenotax_coil')
+        .duration(1200)
+        .EUt(31457280);
 
     // Cupronickel / Kanthal no Changes
 
@@ -727,7 +814,7 @@ ServerEvents.recipes(event => {
         .itemOutputs('gtceu:mega_vacuum_freezer')
         .stationResearch(
         researchRecipeBuilder => researchRecipeBuilder
-            .researchStack(Item.of('gtceu:vacuum_freezer'))
+            .researchStack(Item.of('gtceu:super_vacuum_freezer'))
             .EUt(GTValues.VHA[GTValues.ZPM])
             .CWUt(24)
         )
@@ -741,7 +828,7 @@ ServerEvents.recipes(event => {
         .itemOutputs('gtceu:mega_blast_furnace')
         .stationResearch(
         researchRecipeBuilder => researchRecipeBuilder
-            .researchStack(Item.of('gtceu:electric_blast_furnace'))
+            .researchStack(Item.of('gtceu:super_ebf'))
             .EUt(GTValues.VHA[GTValues.UV])
             .CWUt(64)
         )

@@ -1474,7 +1474,7 @@
 				type: "item"
 			}]
 			x: 16.0d
-			y: -7.0d
+			y: -5.0d
 		}
 		{
 			dependencies: ["0B7A0924AFE58559"]
@@ -1565,7 +1565,7 @@
 				type: "item"
 			}]
 			x: 18.0d
-			y: -7.0d
+			y: -5.0d
 		}
 		{
 			dependencies: ["67ABB3BF6D0C183B"]
@@ -1941,30 +1941,6 @@
 			]
 			x: 4.0d
 			y: 1.0d
-		}
-		{
-			dependencies: ["6131A76D203DE6AB"]
-			id: "48D7CD53489703BD"
-			tasks: [{
-				id: "35CA4C045FD0DADF"
-				item: "gtceu:titan_steel_ingot"
-				type: "item"
-			}]
-			x: 16.0d
-			y: -5.0d
-		}
-		{
-			dependencies: ["48D7CD53489703BD"]
-			id: "711E070BC620182D"
-			shape: "gear"
-			size: 1.25d
-			tasks: [{
-				id: "15FA7230C4FAD7D1"
-				item: "gtceu:titan_forge"
-				type: "item"
-			}]
-			x: 18.0d
-			y: -5.0d
 		}
 	]
 	title: "{ftbquests.chapter.futuristic_mechanisms.title}"

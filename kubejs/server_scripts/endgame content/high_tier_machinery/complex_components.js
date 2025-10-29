@@ -146,6 +146,15 @@ ServerEvents.recipes(event => {
     DracoQMD('diode_nt', 'diode', 24, ['2x gtceu:silicon_carbide_over_bismuth_tritelluride_dust', '1x kubejs:neutronium_chip', '8x gtceu:fine_stellarium_wire'], 288, 156);
     DracoQMD('diode_dr', 'diode', 32, ['2x gtceu:silicon_carbide_over_bismuth_tritelluride_dust', '1x kubejs:draco_chip', '8x gtceu:fine_stellarium_wire'], 288, 180);
 
+    ['computational_matrix','transmission_assembly','precision_drive_mechanism','microfluidic_flow_valve','super_magnetic_core', 'catalyst_core', 'high_strength_panel', 'micropower_router'].forEach(type => {
+        event.recipes.gtceu.assembler(`ruined_${type}_duplication`)
+            .itemInputs(`kubejs:ruined_${type}`,'4x gtceu:dense_enriched_naquadah_plate', '16x gtceu:fine_ancient_runicalium_wire') //Yes I know dense stacks to 7, but multis exist
+            .inputFluids('gtceu:naquadria 1440')
+            .itemOutputs(`2x kubejs:ruined_${type}`)
+            .duration(1200)
+            .EUt(GTValues.VA[GTValues.UHV]);
+    });
+
     // === Material List Loader ===    
         const materialList = (Tier,Tier1,Tier2,Primary,Support,Material,RubberR,RubberF,Plastic,Lubricant,WireTypeComputational,WireTypeMechanical,CableType,GlassType,CatalystType,PrimaryMagnet,SecondaryMagnet,Fluid,VoltageCoil,eut,Scaler,Coolant,SuperConductor,cwu) => {
     

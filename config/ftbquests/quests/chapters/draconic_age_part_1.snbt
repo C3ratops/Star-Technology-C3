@@ -32,8 +32,8 @@
 		{
 			id: "6EBA3C9601A8DDCC"
 			linked_quest: "5080743917931298"
-			x: -8.0d
-			y: 8.0d
+			x: -5.0d
+			y: 7.0d
 		}
 		{
 			id: "02B087F0A2892890"
@@ -475,7 +475,7 @@
 				item: "start_core:abyssal_harvester"
 				type: "item"
 			}]
-			x: -4.0d
+			x: -6.0d
 			y: 6.0d
 		}
 		{
@@ -551,7 +551,6 @@
 		}
 		{
 			dependencies: [
-				"18FD654260DFF1D6"
 				"5080743917931298"
 				"2F6115002741F26F"
 			]
@@ -632,6 +631,7 @@
 				"75C33909E2CD5EC0"
 			]
 			description: ["{ftbquests.chapter.draconic_age_part_1.quest22.description1}"]
+			hide_dependency_lines: true
 			id: "097D8B4DF03A8617"
 			rewards: [{
 				id: "36AFA4CFB73E41F6"
@@ -1529,8 +1529,8 @@
 				}
 			]
 			title: "{ftbquests.chapter.draconic_age_part_1.quest62.title}"
-			x: -6.0d
-			y: 6.0d
+			x: -8.0d
+			y: 8.0d
 		}
 		{
 			dependencies: ["28DE3D2A96C4D0C8"]
@@ -1770,8 +1770,8 @@
 					type: "item"
 				}
 			]
-			x: -1.0d
-			y: 5.0d
+			x: -2.0d
+			y: 6.0d
 		}
 		{
 			dependencies: [
@@ -2074,32 +2074,12 @@
 				item: "gtceu:component_part_hub"
 				type: "item"
 			}]
-			x: -2.0d
+			x: -4.0d
 			y: 6.0d
 		}
 		{
-			dependencies: ["262BD3D9D1DF7F13"]
-			id: "25050C413B613EC4"
-			tasks: [{
-				id: "295C35D74FE59661"
-				title: "Intermediate Heating Fluid 1"
-				type: "checkmark"
-			}]
-			x: -5.0d
-			y: 5.0d
-		}
-		{
-			dependencies: ["3AE729D3F47E9A2B"]
-			id: "7235A03483FB046B"
-			tasks: [{
-				id: "0ABFCE5B9AB8845A"
-				title: "Intermediate Heating Fluid 2"
-				type: "checkmark"
-			}]
-			x: 1.0d
-			y: -1.0d
-		}
-		{
+			dependencies: ["2DACE6EF41A118D9"]
+			hide_dependency_lines: true
 			id: "208863E121666BF4"
 			shape: "none"
 			size: 1.25d

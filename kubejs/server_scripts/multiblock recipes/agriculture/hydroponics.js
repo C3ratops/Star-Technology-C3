@@ -53,7 +53,7 @@ ServerEvents.recipes(event => {
         .EUt(global.vha['ev']);
 
     event.recipes.gtceu.large_chemical_reactor(id('nutrient_rich_fertilizer_solution_36x'))
-        .itemInputs('4x gtceu:phosphate_dust','9x gtceu:bone_dust')
+        .itemInputs('4x gtceu:phosphate_dust','9x minecraft:bone_meal')
         .inputFluids('minecraft:water 32400','gtceu:npk_solution 3600')
         .outputFluids('gtceu:nutrient_rich_fertilizer_solution 36000')
         .duration(200 * 36)

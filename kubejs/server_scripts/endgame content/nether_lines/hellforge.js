@@ -41,79 +41,25 @@ ServerEvents.recipes(event => {
     //Hell Forge Recipes
     const HellForgeMat = (type,IngQuant,inputs,plasma,catalyst,HeatMK,eut,SecDurPerIng) => {
 
-        if (inputs.length == 3){
         event.recipes.gtceu.hellforge(id(`${type}`))
-            .inputFluids(`gtceu:${plasma}_plasma ${IngQuant * 144}`, inputs[0], inputs[1], inputs[2])
+            .inputFluids(`gtceu:${plasma}_plasma ${IngQuant * 144}`)
+            .inputFluids(inputs)
             .blastFurnaceTemp(HeatMK)
             .duration(SecDurPerIng * 20 * IngQuant)
             .outputFluids(`gtceu:${type}_plasma ${IngQuant * 144}`)
             // .itemOutputs()
             .EUt(eut)
-            .circuit(3);
+            .circuit(inputs.length);
         event.recipes.gtceu.hellforge(id(`${type}_boosted`))
-            .inputFluids(`gtceu:${plasma}_plasma ${IngQuant * 144}`, inputs[0], inputs[1], inputs[2])
-            .itemInputs(`kubejs:${catalyst}_catalyst`)
+            .inputFluids(`gtceu:${plasma}_plasma ${IngQuant * 144}`)
+            .inputFluids(inputs)
+            .itemInputs(`${IngQuant}x kubejs:${catalyst}_catalyst`)
             .blastFurnaceTemp(HeatMK)
             .duration(SecDurPerIng * 20 * IngQuant * .67)
             .outputFluids(`gtceu:${type}_plasma ${IngQuant * 144}`)
             // .itemOutputs()
             .EUt(eut)
-            .circuit(13);
-        } if (inputs.length == 4){
-        event.recipes.gtceu.hellforge(id(`${type}`))
-            .inputFluids(`gtceu:${plasma}_plasma ${IngQuant * 144}`, inputs[0], inputs[1], inputs[2], inputs[3])
-            .blastFurnaceTemp(HeatMK)
-            .duration(SecDurPerIng * 20 * IngQuant)
-            .outputFluids(`gtceu:${type}_plasma ${IngQuant * 144}`)
-            // .itemOutputs()
-            .EUt(eut)
-            .circuit(4);
-        event.recipes.gtceu.hellforge(id(`${type}_boosted`))
-            .inputFluids(`gtceu:${plasma}_plasma ${IngQuant * 144}`, inputs[0], inputs[1], inputs[2], inputs[3])
-            .blastFurnaceTemp(HeatMK)
-            .itemInputs(`kubejs:${catalyst}_catalyst`)
-            .duration(SecDurPerIng * 20 * IngQuant * .67)
-            .outputFluids(`gtceu:${type}_plasma ${IngQuant * 144}`)
-            // .itemOutputs()
-            .EUt(eut)
-            .circuit(14);
-        } if (inputs.length == 5){
-        event.recipes.gtceu.hellforge(id(`${type}`))
-            .inputFluids(`gtceu:${plasma}_plasma ${IngQuant * 144}`, inputs[0], inputs[1], inputs[2], inputs[3], inputs[4])
-            .blastFurnaceTemp(HeatMK)
-            .duration(SecDurPerIng * 20 * IngQuant)
-            .outputFluids(`gtceu:${type}_plasma ${IngQuant * 144}`)
-            // .itemOutputs()
-            .EUt(eut)
-            .circuit(5);
-        event.recipes.gtceu.hellforge(id(`${type}_boosted`))
-            .inputFluids(`gtceu:${plasma}_plasma ${IngQuant * 144}`, inputs[0], inputs[1], inputs[2], inputs[3], inputs[4])
-            .itemInputs(`kubejs:${catalyst}_catalyst`)
-            .blastFurnaceTemp(HeatMK)
-            .duration(SecDurPerIng * 20 * IngQuant * .67)
-            .outputFluids(`gtceu:${type}_plasma ${IngQuant * 144}`)
-            // .itemOutputs()
-            .EUt(eut)
-            .circuit(15);
-        } if (inputs.length == 6){
-        event.recipes.gtceu.hellforge(id(`${type}`))
-            .inputFluids(`gtceu:${plasma}_plasma ${IngQuant * 144}`, inputs[0], inputs[1], inputs[2], inputs[3], inputs[4], inputs[5])
-            .blastFurnaceTemp(HeatMK)
-            .duration(SecDurPerIng * 20 * IngQuant)
-            .outputFluids(`gtceu:${type}_plasma ${IngQuant * 144}`)
-            // .itemOutputs()
-            .EUt(eut)
-            .circuit(6);
-        event.recipes.gtceu.hellforge(id(`${type}_boosted`))
-            .inputFluids(`gtceu:${plasma}_plasma ${IngQuant * 144}`, inputs[0], inputs[1], inputs[2], inputs[3], inputs[4], inputs[5])
-            .itemInputs(`kubejs:${catalyst}_catalyst`)
-            .blastFurnaceTemp(HeatMK)
-            .duration(SecDurPerIng * 20 * IngQuant * .67)
-            .outputFluids(`gtceu:${type}_plasma ${IngQuant * 144}`)
-            // .itemOutputs()
-            .EUt(eut)
-            .circuit(16);
-        }
+            .circuit(inputs.length + 10);
 
     // Quantum Cooling
         event.recipes.gtceu.quantum_cooling(id(`${type}`))
@@ -144,6 +90,7 @@ ServerEvents.recipes(event => {
     HellForgeMat('draconyallium', 258, ['gtceu:duranium 9792', 'gtceu:silver 2880', 'gtceu:oxygen_plasma 94000', 'gtceu:nitrogen_plasma 76000', 'gtceu:dragon_breath 25800'], 'voidic', 'abyssal', 1444, GTValues.VHA[GTValues.UXV], 13.3);
     HellForgeMat('draco_abyssal', 9, ['gtceu:draconyallium 144', 'gtceu:abyssal_alloy 432', 'gtceu:void 288', 'gtceu:ancient_runicalium 432'], 'preon', 'abyssal', 1758, GTValues.VA[GTValues.UXV], 39.4);
     HellForgeMat('expetidalloy_d_17', 17, ['gtceu:hafnide_ceramic_base 288', 'gtceu:hastelloy_c_276 1584', 'gtceu:dragonsteel 432', 'gtceu:rhodium_plated_palladium 144'], 'americium_plas', 'ascendant', 863, GTValues.VA[GTValues.UIV], 32.7);
+    HellForgeMat('rhenate_w', 33, ['gtceu:rhenium 288', 'gtceu:tungsten 720', 'gtceu:neutronium 144', 'gtceu:rose_gold 2592', 'gtceu:neodymium 1008'], 'tin_plas', 'ascendant', 946, GTValues.VA[GTValues.UIV], 34.3);
 
     // Heating Fluids
     event.recipes.gtceu.cyclonic_sifter(id('infernal_concentrate_refinement'))
@@ -202,12 +149,12 @@ ServerEvents.recipes(event => {
     event.recipes.gtceu.assembler(id(`${type}_catalyst`))
         .itemInputs(inputs)
         .inputFluids(`gtceu:poly_34_ethylenedioxythiophene_polystyrene_sulfate ${256 + scaler * 32}`)
-        .itemOutputs(`24x kubejs:${type}_catalyst`)
+        .itemOutputs(`96x kubejs:${type}_catalyst`)
         .duration(600)
         .EUt(GTValues.VHA[GTValues.UV] * ( 4 ** scaler ));
     };
-    catalyst('ascendant',['gtceu:nyanium_frame','kubejs:uhv_catalyst_core','2x gtceu:long_stellarium_rod','2x #gtceu:circuits/uhv','32x gtceu:sapphire_lens'],1);
-    catalyst('infernal',['gtceu:magmada_alloy_frame','kubejs:uev_catalyst_core','2x gtceu:long_ancient_netherite_rod','2x #gtceu:circuits/uev','32x gtceu:ruby_lens'],2);
-    catalyst('abyssal',['gtceu:draconyallium_frame','kubejs:uiv_catalyst_core','2x gtceu:long_void_rod','2x #gtceu:circuits/uiv','32x gtceu:echo_shard_lens'],3);
+    catalyst('ascendant',['gtceu:nyanium_frame','kubejs:uhv_catalyst_core','2x gtceu:long_stellarium_rod','2x #gtceu:circuits/uhv','48x gtceu:sapphire_lens'],1);
+    catalyst('infernal',['gtceu:magmada_alloy_frame','kubejs:uev_catalyst_core','2x gtceu:long_ancient_netherite_rod','2x #gtceu:circuits/uev','48x gtceu:ruby_lens'],2);
+    catalyst('abyssal',['gtceu:draconyallium_frame','kubejs:uiv_catalyst_core','2x gtceu:long_void_rod','2x #gtceu:circuits/uiv','48x gtceu:echo_shard_lens'],3);
 
     });

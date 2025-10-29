@@ -60,20 +60,20 @@ ServerEvents.recipes(event => {
         .duration(4000)
         .EUt(GTValues.VHA[GTValues.UHV]);
 
-    // event.recipes.gtceu.assembly_line(id('omega_pressure_heat_chamber')) //good once added
-    //     .itemInputs('gtceu:super_pressure_heat_chamber', '4x #gtceu:circuits/uiv', 'gtceu:double_stellarium_plate', 
-    //             'gtceu:double_nyanium_plate', 'gtceu:uev_field_generator', '64x kubejs:uepic_chip', '64x kubejs:uepic_chip', 
-    //             '64x kubejs:uepic_chip', '64x kubejs:uepic_chip', '32x kubejs:uepic_chip', '48x gtceu:ancient_runicalium_single_wire')
-    //     .inputFluids('gtceu:ancient_netherite 6912', 'gtceu:calamatium 1728')
-    //     .itemOutputs('gtceu:omega_pressure_heat_chamber')
-    //     .stationResearch(
-    //     researchRecipeBuilder => researchRecipeBuilder
-    //         .researchStack(Item.of('gtceu:super_compact_heat_chamber'))
-    //         .EUt(GTValues.VHA[GTValues.UEV])
-    //         .CWUt(192)
-    //     )
-    //     .duration(4800)
-    //     .EUt(GTValues.VHA[GTValues.UEV]);
+    event.recipes.gtceu.assembly_line(id('omega_pressure_heat_chamber'))
+        .itemInputs('gtceu:super_pressure_heat_chamber', '4x #gtceu:circuits/uiv', 'gtceu:double_stellarium_plate', 
+                'gtceu:double_nyanium_plate', 'gtceu:uev_field_generator', '64x kubejs:uepic_chip', '64x kubejs:uepic_chip', 
+                '64x kubejs:uepic_chip', '64x kubejs:uepic_chip', '32x kubejs:uepic_chip', '48x gtceu:ancient_runicalium_single_wire')
+        .inputFluids('gtceu:ancient_netherite 6912', 'gtceu:calamatium 1728')
+        .itemOutputs('gtceu:omega_pressure_heat_chamber')
+        .stationResearch(
+        researchRecipeBuilder => researchRecipeBuilder
+            .researchStack(Item.of('gtceu:super_compact_heat_chamber'))
+            .EUt(GTValues.VHA[GTValues.UEV])
+            .CWUt(192)
+        )
+        .duration(4800)
+        .EUt(GTValues.VHA[GTValues.UEV]);
 
     event.recipes.gtceu.assembly_line(id('large_rotor_machine'))
         .itemInputs('gtceu:shellite_frame', '4x #gtceu:circuits/luv', 'gtceu:double_vanadium_gallium_plate', 
