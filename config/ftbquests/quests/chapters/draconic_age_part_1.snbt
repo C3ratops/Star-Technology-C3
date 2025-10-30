@@ -11,8 +11,8 @@
 		image: "sgjourney:item/pegasus_stargate"
 		rotation: 0.0d
 		width: 2.5d
-		x: 8.935d
-		y: 4.845000000000001d
+		x: 11.56d
+		y: 2.7150000000000007d
 	}]
 	order_index: 6
 	progression_mode: "linear"
@@ -1092,7 +1092,7 @@
 				type: "item"
 			}]
 			shape: "gear"
-			size: 1.0d
+			size: 1.5d
 			tasks: [{
 				id: "5BCB1B1022CB00AB"
 				item: "start_core:uiv_auxiliary_boosted_fusion_reactor"
@@ -1418,8 +1418,8 @@
 				item: "placeablemaxwell:maxwell"
 				type: "item"
 			}]
-			x: 8.935d
-			y: 4.845000000000001d
+			x: 11.56d
+			y: 2.7150000000000007d
 		}
 		{
 			dependencies: ["3BB8848F84026B45"]
@@ -1443,8 +1443,8 @@
 				type: "checkmark"
 			}]
 			title: "{ftbquests.chapter.draconic_age_part_1.quest58.title}"
-			x: 9.25d
-			y: 6.875d
+			x: 11.875d
+			y: 4.745d
 		}
 		{
 			dependencies: ["2DACE6EF41A118D9"]
@@ -1464,8 +1464,8 @@
 				item: "placeablemaxwell:vasilisa"
 				type: "item"
 			}]
-			x: 6.875d
-			y: 3.75d
+			x: 9.5d
+			y: 1.62d
 		}
 		{
 			dependencies: ["2DACE6EF41A118D9"]
@@ -1485,8 +1485,8 @@
 				item: "placeablemaxwell:valenok"
 				type: "item"
 			}]
-			x: 9.375d
-			y: 2.13d
+			x: 12.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["2DACE6EF41A118D9"]
@@ -1507,8 +1507,8 @@
 				item: "placeablemaxwell:mars"
 				type: "item"
 			}]
-			x: 8.0d
-			y: 2.5d
+			x: 10.625d
+			y: 0.3700000000000001d
 		}
 		{
 			dependencies: ["01FBF9CDD9066AF5"]
@@ -1669,8 +1669,8 @@
 		}
 		{
 			dependencies: [
-				"6D6C79E7CBBCC893"
 				"35D5CC08AE53A7FA"
+				"5A724E912A475EAB"
 			]
 			id: "3AE6E85C2FC76DE9"
 			rewards: [{
@@ -1684,8 +1684,8 @@
 				item: "kubejs:awakened_draconic_wetware_processor_assembly"
 				type: "item"
 			}]
-			x: 6.0d
-			y: 0.0d
+			x: 8.0d
+			y: 2.0d
 		}
 		{
 			dependencies: [
@@ -1727,19 +1727,6 @@
 			}]
 			x: 6.0d
 			y: -6.0d
-		}
-		{
-			dependencies: ["2DACE6EF41A118D9"]
-			id: "1DC40C42DF1AFCC4"
-			invisible: true
-			optional: true
-			tasks: [{
-				id: "70B6C065BA6E04DF"
-				title: "{ftbquests.chapter.draconic_age_part_1.quest74.task_8121890521161270495.title}"
-				type: "checkmark"
-			}]
-			x: 4.0d
-			y: 6.0d
 		}
 		{
 			dependencies: [
@@ -1784,18 +1771,11 @@
 				item: "kubejs:coin"
 				type: "item"
 			}]
-			tasks: [
-				{
-					id: "156168FA92AD01CA"
-					item: "kubejs:awakened_draconic_wetware_circuit_board"
-					type: "item"
-				}
-				{
-					id: "757107D4DA51C043"
-					item: "kubejs:awakened_draconic_wetware_printed_circuit_board"
-					type: "item"
-				}
-			]
+			tasks: [{
+				id: "156168FA92AD01CA"
+				item: "kubejs:awakened_draconic_wetware_circuit_board"
+				type: "item"
+			}]
 			x: 6.0d
 			y: 2.0d
 		}
@@ -1817,8 +1797,8 @@
 				item: "gtceu:lepton_resonant_thallium_antimonide_ingot"
 				type: "item"
 			}]
-			x: 3.0d
-			y: 7.0d
+			x: 4.0d
+			y: 6.0d
 		}
 		{
 			dependencies: [
@@ -1836,7 +1816,7 @@
 				item: "gtceu:draco_abyssal_ingot"
 				type: "item"
 			}]
-			x: 0.0d
+			x: 2.0d
 			y: 4.0d
 		}
 		{
@@ -1998,8 +1978,8 @@
 				}
 			]
 			title: "{ftbquests.chapter.draconic_age_part_1.quest84.title}"
-			x: -1.0d
-			y: 3.0d
+			x: 0.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["310FC3F86513555F"]
@@ -2031,7 +2011,7 @@
 			hide_dependent_lines: true
 			id: "4A13D4F1B22DBCAF"
 			shape: "gear"
-			size: 1.0d
+			size: 1.5d
 			tasks: [{
 				id: "6A05D7EFE5CC5E6D"
 				item: "gtceu:multithreaded_component_synthesis_forge"
@@ -2045,9 +2025,9 @@
 			id: "20ABDF48307586F2"
 			invisible: true
 			tasks: [{
-				id: "2E0B74B3D5415EFB"
-				title: "KOMARU"
-				type: "checkmark"
+				id: "1A613FCE6992AF19"
+				item: "kubejs:worries_about_it"
+				type: "item"
 			}]
 			x: 15.0d
 			y: 6.0d
@@ -2063,7 +2043,7 @@
 				item: "gtceu:atomic_synthesis_plant"
 				type: "item"
 			}]
-			x: 2.0d
+			x: 4.0d
 			y: 4.0d
 		}
 		{
@@ -2088,8 +2068,8 @@
 				item: "placeablemaxwell:poomba"
 				type: "item"
 			}]
-			x: 10.39d
-			y: 3.88d
+			x: 13.015d
+			y: 1.75d
 		}
 		{
 			dependencies: ["20ABDF48307586F2"]
@@ -2112,6 +2092,35 @@
 			}]
 			x: 16.0d
 			y: 7.0d
+		}
+		{
+			dependencies: [
+				"394D5FF2EEE3E610"
+				"5A724E912A475EAB"
+			]
+			id: "681FD6DF05A9DF79"
+			tasks: [{
+				id: "1600579B58EEF6A8"
+				item: {
+					Count: 1
+					id: "start_core:component_data_core"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D6C79E7CBBCC893"]
+			id: "5A724E912A475EAB"
+			tasks: [{
+				id: "1FC13A74F9418DDB"
+				item: "kubejs:awakened_draconic_wetware_printed_circuit_board"
+				type: "item"
+			}]
+			x: 7.0d
+			y: 1.0d
 		}
 	]
 	title: "{ftbquests.chapter.draconic_age_part_1.title}"

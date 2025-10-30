@@ -868,7 +868,7 @@ GTCEuStartupEvents.registry('gtceu:material', event => {
     // Misc
     compDustLiquid('indium_tin_lead_cadmium_soldering_alloy', ['14x indium', '3x tin', '2x lead', '1x cadmium'], 0xa6a6a6, []);
 
-    compDustLiquid('naquadated_soldering_alloy', ['3x tin', '18x indium', '6x silver', '4x lanthanum', '3x cerium', '3x naquadah', '1x trinium', '1x bismuth', '2x lead'], 0x8790A1, []);
+    compDustLiquid('naquadated_soldering_alloy', ['3x tin', '18x indium', '6x silver', '4x lutetium', '3x cerium', '3x naquadah', '1x trinium', '2x lead'], 0x8790A1, []);
 
     compIngotLiquid('thorium_plut_duranide_241',  ['4x thorium', '1x duranium', '3x plutonium_241'], 0xEC342A, [], [10199, 'highest', VA('uv'), 850], [fine_wire, no_decomp, foil]);
 

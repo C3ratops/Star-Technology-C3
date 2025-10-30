@@ -1,7 +1,7 @@
 GTCEuStartupEvents.registry('gtceu:recipe_type', event => {
 
     event.create('draco_circuit_assembler')
-        .category('extemely_advanced')
+        .category('extremely_advanced')
         .setEUIO('in')
         .setMaxIOSize(16, 1, 3, 0)
         .setSlotOverlay(false, false, GuiTextures.SOLIDIFIER_OVERLAY)

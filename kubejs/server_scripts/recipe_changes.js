@@ -919,14 +919,14 @@ ServerEvents.recipes(event => {
         .cleanroom(CleanroomType.STERILE_CLEANROOM)
         .EUt(GTValues.V[GTValues.UHV]);
 
-    event.recipes.gtceu.circuit_assembler(id('multithread_data_module'))
-        .itemInputs('kubejs:draconic_wetware_printed_circuit_board','2x #gtceu:circuits/uev','64x kubejs:qram_chip', 
+    event.recipes.gtceu.circuit_assembler(id('component_data_core'))
+        .itemInputs('kubejs:awakened_draconic_wetware_printed_circuit_board','2x #gtceu:circuits/uiv','56x kubejs:qram_chip', 
             '48x kubejs:3d_nor_chip','48x kubejs:3d_nand_chip','32x gtceu:fine_polonium_bismide_wire')
-        .inputFluids('gtceu:indium_tin_lead_cadmium_soldering_alloy 576')
-        .itemOutputs('kubejs:multithread_data_module') //to be moved to core for data abilities
+        .inputFluids('gtceu:naquadated_soldering_alloy 1152')
+        .itemOutputs('start_core:component_data_core')
         .duration(400)
         .cleanroom(CleanroomType.STERILE_CLEANROOM)
-        .EUt(GTValues.V[GTValues.UEV]);
+        .EUt(GTValues.V[GTValues.UIV]);
 
     event.recipes.gtceu.assembler(id('redstone_variadic_interface'))
         .itemInputs('gtceu:luv_machine_hull', '2x gtceu:hpic_chip', 'gtceu:redstone_plate', 'gtceu:advanced_item_detector_cover',
@@ -1080,8 +1080,18 @@ ServerEvents.recipes(event => {
         .outputFluids('gtceu:indium_tin_lead_cadmium_soldering_alloy 2880')
         .duration(280)
         .blastFurnaceTemp(3000)
-        .EUt(GTValues.VH[GTValues.EV])
+        .EUt(GTValues.VH[GTValues.ZPM])
         .circuit(14);
+
+    event.recipes.gtceu.alloy_blast_smelter(id('naquadated_soldering_alloy'))
+        .itemInputs('3x gtceu:tin_dust', '18x gtceu:indium_dust', '6x gtceu:silver_dust',
+             '4x gtceu:lutetium_dust', '3x gtceu:cerium_dust', '3x gtceu:naquadah_dust',
+             '1x gtceu:trinium_dust', '2x gtceu:lead_dust')
+        .outputFluids('gtceu:naquadated_soldering_alloy 5760')
+        .duration(2250)
+        .blastFurnaceTemp(8980)
+        .EUt(GTValues.VH[GTValues.UHV])
+        .circuit(8);
 
     event.shaped('bingus:floppa_orb', [
         'ABA',
