@@ -1098,7 +1098,7 @@
 				item: "start_core:uiv_auxiliary_boosted_fusion_reactor"
 				type: "item"
 			}]
-			x: 8.0d
+			x: 10.0d
 			y: -4.0d
 		}
 		{
@@ -1312,7 +1312,6 @@
 				"0B475E2385B478C0"
 				"53E595EAB1C90884"
 				"61C534992FB17066"
-				"2F62965D05463E44"
 				"208863E121666BF4"
 				"1359FB7E009CD041"
 			]
@@ -1908,7 +1907,6 @@
 		}
 		{
 			dependencies: ["38C2E3061C764F05"]
-			hide_dependent_lines: true
 			id: "2F62965D05463E44"
 			rewards: [{
 				id: "6A891782D4FA2656"
@@ -1920,8 +1918,8 @@
 				item: "gtceu:maxwellium_bucket"
 				type: "item"
 			}]
-			x: 8.0d
-			y: -6.0d
+			x: 12.0d
+			y: -4.0d
 		}
 		{
 			dependencies: ["4DF07CB3D60C901C"]
@@ -2018,7 +2016,7 @@
 				type: "item"
 			}]
 			x: 10.0d
-			y: -4.0d
+			y: -2.0d
 		}
 		{
 			dependencies: ["1359FB7E009CD041"]
@@ -2123,7 +2121,10 @@
 			y: 1.0d
 		}
 		{
-			dependencies: ["4A13D4F1B22DBCAF"]
+			dependencies: [
+				"4A13D4F1B22DBCAF"
+				"2F62965D05463E44"
+			]
 			hide_dependent_lines: true
 			id: "1359FB7E009CD041"
 			tasks: [{
@@ -2132,7 +2133,7 @@
 				type: "item"
 			}]
 			x: 12.0d
-			y: -4.0d
+			y: -2.0d
 		}
 	]
 	title: "{ftbquests.chapter.draconic_age_part_1.title}"

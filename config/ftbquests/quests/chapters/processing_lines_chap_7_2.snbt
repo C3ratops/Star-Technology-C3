@@ -74,6 +74,22 @@
 			x: 6.5d
 			y: 3.0d
 		}
+		{
+			id: "5471BFD2D05A173F"
+			linked_quest: "3AE729D3F47E9A2B"
+			shape: "gear"
+			size: 1.5d
+			x: 17.5d
+			y: 2.0d
+		}
+		{
+			id: "6619BD72D7AC92AB"
+			linked_quest: "1799430093ABCC64"
+			shape: "gear"
+			size: 1.5d
+			x: 17.5d
+			y: 7.0d
+		}
 	]
 	quests: [
 		{
@@ -2381,7 +2397,10 @@
 			y: 0.5d
 		}
 		{
-			dependencies: ["394D5FF2EEE3E610"]
+			dependencies: [
+				"394D5FF2EEE3E610"
+				"1799430093ABCC64"
+			]
 			id: "2C80DB1A0465B07E"
 			shape: "gear"
 			tasks: [{
