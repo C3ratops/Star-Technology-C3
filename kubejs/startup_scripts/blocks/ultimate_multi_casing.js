@@ -89,7 +89,6 @@ StartupEvents.registry('block', event => {
         .requiresTool(false)
         .textureAll('kubejs:block/casings/ultimate_multis/abyssal_drill_casing_2');
 
-
     event.create('advanced_assembly_casing')
         .displayName('Advanced Assembly Casing')
         .hardness(5)
@@ -99,6 +98,116 @@ StartupEvents.registry('block', event => {
         .tagBlock('minecraft:needs_iron_tool')
         .requiresTool(false)
         .textureAll('kubejs:block/casings/ultimate_multis/advanced_assembly_casing');
+
+    event.create('ionic_engraving_casing')
+        .displayName('Ionic Engraving Casing')
+        .hardness(5)
+        .resistance(10)
+        .soundType('metal')
+        .tagBlock('mineable/pickaxe')
+        .tagBlock('minecraft:needs_iron_tool')
+        .requiresTool(false)
+        .textureAll('kubejs:block/casings/ultimate_multis/ionic_engraving_casing');
+
+    event.create('aurouric_resilient_casing')
+        .displayName('Aurouric Resilient Casing')
+        .hardness(5)
+        .resistance(10)
+        .soundType('metal')
+        .tagBlock('mineable/pickaxe')
+        .tagBlock('minecraft:needs_iron_tool')
+        .requiresTool(false)
+        .textureAll('kubejs:block/casings/ultimate_multis/aurouric_resilient_casing');
+
+    event.create('aurouric_polarization_cell', 'gtceu:active')
+        .displayName('Aurouric Polarization Cell')
+        .hardness(5)
+        .resistance(10)
+        .soundType('metal')
+        .tagBlock('mineable/pickaxe')
+        .tagBlock('minecraft:needs_iron_tool')
+        .requiresTool(false)
+        .bloom('kubejs:block/casings/ultimate_multis/aurouric_polarization_cell');
+
+    event.create('atomic_convergence_casing')
+        .displayName('Atomic Convergence Casing')
+        .hardness(5)
+        .resistance(10)
+        .soundType('metal')
+        .tagBlock('mineable/pickaxe')
+        .tagBlock('minecraft:needs_iron_tool')
+        .requiresTool(false)
+        .textureAll('kubejs:block/casings/ultimate_multis/atomic_convergence_casing');
+
+    event.create('gravitationally_strained_stabilization_casing')
+        .displayName('Gravitationally Strained Stabilization Casing')
+        .hardness(5)
+        .resistance(10)
+        .soundType('metal')
+        .tagBlock('mineable/pickaxe')
+        .tagBlock('minecraft:needs_iron_tool')
+        .requiresTool(false)
+        .textureAll('kubejs:block/casings/ultimate_multis/gravitationally_strained_stabilization_casing');
+
+    event.create('inoculated_nuclei_seperation_casing')
+        .displayName('Inoculated Nuclei Seperation Casing')
+        .hardness(5)
+        .resistance(10)
+        .soundType('metal')
+        .tagBlock('mineable/pickaxe')
+        .tagBlock('minecraft:needs_iron_tool')
+        .requiresTool(false)
+        .textureAll('kubejs:block/casings/ultimate_multis/inoculated_nuclei_seperation_casing');
+
+    event.create('subatomically_secure_casing')
+        .displayName('Sub-Atomically Secure Casing')
+        .hardness(5)
+        .resistance(10)
+        .soundType('metal')
+        .tagBlock('mineable/pickaxe')
+        .tagBlock('minecraft:needs_iron_tool')
+        .requiresTool(false)
+        .textureAll('kubejs:block/casings/ultimate_multis/subatomically_secure_casing');
+
+    event.create('quantumly_resistant_casing')
+        .displayName('Quantumly Resistant Casing')
+        .hardness(5)
+        .resistance(10)
+        .soundType('metal')
+        .tagBlock('mineable/pickaxe')
+        .tagBlock('minecraft:needs_iron_tool')
+        .requiresTool(false)
+        .textureAll('kubejs:block/casings/ultimate_multis/quantumly_resistant_casing');
+
+    event.create('absolute_annihilation_casing')
+        .displayName('Absolute Annihilation Casing')
+        .hardness(5)
+        .resistance(10)
+        .soundType('metal')
+        .tagBlock('mineable/pickaxe')
+        .tagBlock('minecraft:needs_iron_tool')
+        .requiresTool(false)
+        .textureAll('kubejs:block/casings/ultimate_multis/absolute_annihilation_casing');
+
+    event.create('tectonic_defiance_casing')
+        .displayName('Tectonic Defiance Casing')
+        .hardness(5)
+        .resistance(10)
+        .soundType('metal')
+        .tagBlock('mineable/pickaxe')
+        .tagBlock('minecraft:needs_iron_tool')
+        .requiresTool(false)
+        .textureAll('kubejs:block/casings/ultimate_multis/tectonic_defiance_casing');
+
+    event.create('true_revitilization_casing')
+        .displayName('True Revitilization Casing')
+        .hardness(5)
+        .resistance(10)
+        .soundType('metal')
+        .tagBlock('mineable/pickaxe')
+        .tagBlock('minecraft:needs_iron_tool')
+        .requiresTool(false)
+        .textureAll('kubejs:block/casings/ultimate_multis/true_revitilization_casing');
 
     event.create('superdense_assembly_control_casing', 'gtceu:active')
         .displayName('Superdense Assembly Control Casing')

@@ -180,9 +180,9 @@ ServerEvents.recipes(event => {
         .EUt(GTValues.VHA[GTValues.UIV]);
 
     // Voidic Metals
-    const VoidicMetal = (Material,Center,First,Second,VoidType,PerSeconds) => {
+    const VoidicMetal = (Material,inputs,VoidType,PerSeconds) => {
     event.recipes.gtceu.draco_infusion(id(`${Material}_dust`))
-        .itemInputs(Center, First, Second, Second, First, First, Second)
+        .itemInputs(inputs)
         .inputFluids(`gtceu:${VoidType}_centric_void 1000`)
         .itemOutputs(`7x gtceu:${Material}_dust`)
         .duration(PerSeconds * 7 * 20)
@@ -194,8 +194,8 @@ ServerEvents.recipes(event => {
         );
     }
 
-    VoidicMetal('rhexis','gtceu:ancient_netherite_ingot', 'minecraft:netherite_ingot', 'gtceu:titanium_tungsten_carbide_ingot', 'chaos', 9.45);
-    VoidicMetal('xeproda','gtceu:void_ingot', 'gtceu:black_steel_ingot', 'gtceu:enriched_naquadah_ingot', 'chaos', 11.35);
-    VoidicMetal('chalyblux','gtceu:hafnium_ingot', 'gtceu:rose_gold_ingot', 'gtceu:platinum_ingot', 'order', 8.65);
+    VoidicMetal('rhexis', ['gtceu:red_alloy_ingot','gtceu:pure_netherite_ingot','gtceu:titanium_tungsten_carbide_ingot','gtceu:nickel_zinc_ferrite_ingot','gtceu:ancient_netherite_ingot','gtceu:titan_steel_ingot','minecraft:netherite_ingot'], 'chaos', 9.45);
+    VoidicMetal('xeproda', ['gtceu:void_ingot','gtceu:black_steel_ingot','gtceu:enriched_naquadah_ingot','gtceu:indium_tin_barium_titanium_cuprate_ingot','gtceu:black_bronze_ingot','gtceu:naquadah_alloy_ingot','gtceu:yttrium_barium_cuprate_ingot'], 'chaos', 11.35);
+    VoidicMetal('chalyblux', ['gtceu:hafnium_ingot','gtceu:rose_gold_ingot','gtceu:lumium_ingot','gtceu:electrum_ingot','gtceu:rhodium_plated_palladium_ingot','gtceu:stainless_steel_ingot','gtceu:platinum_ingot'], 'order', 8.65);
 
 });

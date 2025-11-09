@@ -169,19 +169,44 @@ ServerEvents.recipes(event => {
         .duration(50)
         .EUt(16);
 
-    event.recipes.gtceu.assembler(id('advanced_assembly_casing'))
-        .itemInputs('6x gtceu:expetidalloy_d_17_plate', 'gtceu:isovol_frame')
-        .itemOutputs('2x kubejs:advanced_assembly_casing')
-        .circuit(6)
-        .duration(50)
-        .EUt(16);
+    const ultimate_casing = (nameCasing,plate,frameMat) => {
+        event.recipes.gtceu.assembler(id(`${nameCasing}_casing`))
+            .itemInputs(`6x gtceu:double_${plate}_plate`, `gtceu:${frameMat}_frame`)
+            .itemOutputs(`2x kubejs:${nameCasing}_casing`)
+            .circuit(6)
+            .duration(50)
+            .EUt(16);
+    };
 
-    event.recipes.gtceu.assembler(id('superdense_machine_casing'))
-        .itemInputs('6x gtceu:double_neutronium_plate', 'gtceu:zircalloy_4_frame')
-        .itemOutputs('2x kubejs:superdense_machine_casing')
-        .circuit(6)
-        .duration(50)
-        .EUt(16);
+    ultimate_casing('advanced_assembly', 'expetidalloy_d_17', 'isovol');
+    ultimate_casing('superdense_machine', 'neutronium', 'zircalloy_4');
+    ultimate_casing('aurouric_resilient', 'borealic_steel', 'stellarium');
+    ultimate_casing('inoculated_nuclei_seperation', 'ultispestalloy_cmsh', 'zeroidic_trinate_steel');
+    ultimate_casing('ionic_engraving', 'trikoductive_neutro_steel', 'expetidalloy_d_17');
+    ultimate_casing('atomic_convergence', 'melastrium_mox', 'vastaqalloy_cr_4200x');
+    ultimate_casing('gravitationally_strained_stabilization', 'hvga_steel', 'draco_abyssal');
+    ultimate_casing('subatomically_secure', 'mythrotight_carbide_steel', 'aerorelient_steel');
+    ultimate_casing('quantumly_resistant', 'aerorelient_steel', 'mythrotight_carbide_steel');
+    ultimate_casing('absolute_annihilation', 'zeroidic_trinate_steel', 'ultispestalloy_cmsh');
+    ultimate_casing('tectonic_defiance', 'vastaqalloy_cr_4200x', 'melastrium_mox');
+    ultimate_casing('true_revitilization', 'soul_ascendant_cuperite', 'soul_infused');
+
+    const special_ultimate_casing = (nameCasing,inputs,fluids,researched) => {
+        event.recipes.gtceu.assembly_line(id(`${nameCasing}`))
+            .itemInputs(inputs)
+            .inputFluids(fluids)
+            .itemOutputs(`2x kubejs:${nameCasing}`)
+            .duration(400)
+            .stationResearch(
+                researchRecipeBuilder => researchRecipeBuilder
+                    .researchStack(Item.of(researched))
+                    .EUt(GTValues.VA[GTValues.UEV])
+                    .CWUt(216)
+                )
+            .EUt(GTValues.VHA[GTValues.UIV]);
+    };
+
+    special_ultimate_casing('aurouric_polarization_cell',['kubejs:aurouric_resilient_casing', '6x kubejs:uiv_super_magnetic_core', '4x #gtceu:circuits/uiv', 'kubejs:uiv_micropower_router'], ['gtceu:polyether_ether_ketone 5844', 'gtceu:naquadated_soldering_alloy 4780', 'gtceu:draco_abyssal 288'], 'gtceu:electrolytic_cell');
 
     event.recipes.gtceu.assembler(id('titanic_blasting_casing'))
         .itemInputs('6x gtceu:titan_steel_plate', 'gtceu:naquadah_alloy_frame')

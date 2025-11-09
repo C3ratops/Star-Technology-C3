@@ -62,9 +62,19 @@ ServerEvents.recipes(event => {
     Material15000PlusAlloy('abyssal_alloy', 53.4);
     Material15000PlusAlloy('chaotixic_alloy', 30.75);
     Material15000PlusAlloy('ohmderblux_alloy', 25.35);
-    Material15000PlusAlloy('draconyallium', 14.55);
+    Material15000PlusAlloy('draconyallium', 14.4);
     Material15000PlusAlloy('draco_abyssal', 35.85);
-    Material15000PlusAlloy('expetidalloy_d_17', 12.30);
+    Material15000PlusAlloy('expetidalloy_d_17', 12.3);
     Material15000PlusAlloy('rhenate_w', 28.8);
+    Material15000PlusAlloy('borealic_steel', 15.3);
+    Material15000PlusAlloy('ultispestalloy_cmsh', 13.35);
+    Material15000PlusAlloy('trikoductive_neutro_steel', 37.95);
+    Material15000PlusAlloy('melastrium_mox', 25.65);
+    Material15000PlusAlloy('hvga_steel', 14.1);
+    Material15000PlusAlloy('mythrotight_carbide_steel', 13.5);
+    Material15000PlusAlloy('aerorelient_steel', 10.8);
+    Material15000PlusAlloy('zeroidic_trinate_steel', 33.75);
+    Material15000PlusAlloy('vastaqalloy_cr_4200x', 17.7);
+    Material15000PlusAlloy('soul_ascendant_cuperite', 4.2);
 
 });
