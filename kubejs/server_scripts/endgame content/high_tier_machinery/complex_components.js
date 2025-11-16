@@ -104,10 +104,10 @@ ServerEvents.recipes(event => {
             .EUt(GTValues.VHA[GTValues.UHV]);
 
         let dataItem = (cwu > 0 && cwu < 32) ? 'gtceu:data_orb' : (cwu < 160) ? 'gtceu:data_module' : 'start_core:data_dna_disk';
-        event.recipes.gtceu.research_station(`1_x_gtceu_advanced_smd_${nameType}_cpa`)
+        event.recipes.gtceu.research_station(`1_x_gtceu_advanced_smd_${nameType}`)
             .itemInputs(dataItem)
             .itemInputs(`gtceu:advanced_smd_${type}`)
-            .itemOutputs(Item.of(`${dataItem}`, `{assembly_line_research:{research_id:"1x_gtceu_advanced_smd_${type}_cpa",research_type:"gtceu:component_part_assembly"}}`))
+            .itemOutputs(Item.of(`${dataItem}`, `{assembly_line_research:{research_id:"1x_gtceu_advanced_smd_${type}",research_type:"gtceu:component_part_assembly"}}`))
             .CWUt(cwu)
             .totalCWU(cwu * 120 * 20)
             .EUt(GTValues.VHA[GTValues.UHV] / 4);

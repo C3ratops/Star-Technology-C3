@@ -4,16 +4,16 @@ ServerEvents.recipes(event => {
     // Parts
 
             event.recipes.gtceu.assembly_line(id('prismalic_helix_core'))
-                .itemInputs('gtceu:void_frame', 'kubejs:draco_advanced_soc', 'kubejs:runic_wave_generator', '32x gtceu:fine_ancient_runicalium_wire',
-                    '32x gtceu:fine_stellarium_wire', '32x gtceu:fine_melodium_wire', '32x gtceu:fine_prismalium_wire', '32x gtceu:fine_dragonsteel_wire', 
-                    '32x gtceu:fine_twinite_wire', '32x gtceu:fine_shellite_wire', '32x gtceu:fine_enderium_wire', '32x gtceu:fine_lumium_wire', 
-                    '32x gtceu:fine_signalum_wire', '32x gtceu:fine_soul_infused_wire')
+                .itemInputs('gtceu:void_frame', 'kubejs:draco_advanced_soc', 'kubejs:runic_wave_generator', '32x gtceu:fine_draco_abyssal_wire', 
+                    '32x gtceu:fine_ancient_runicalium_wire', '32x gtceu:fine_stellarium_wire', '32x gtceu:fine_melodium_wire', '32x gtceu:fine_prismalium_wire', 
+                    '32x gtceu:fine_dragonsteel_wire', '32x gtceu:fine_twinite_wire', '32x gtceu:fine_shellite_wire', '32x gtceu:fine_enderium_wire', 
+                    '32x gtceu:fine_lumium_wire', '32x gtceu:fine_signalum_wire', '32x gtceu:fine_soul_infused_wire')
                 .inputFluids('gtceu:utopian_akreyrium 5000','gtceu:indium_tin_lead_cadmium_soldering_alloy 2880')
                 .itemOutputs('kubejs:prismalic_helix_core')
                 .duration(900)
                 .stationResearch(
                     researchRecipeBuilder => researchRecipeBuilder
-                        .researchStack(Item.of('kubejs:runic_wave_generator'))
+                        .researchStack(Item.of('kubejs:core_casing'))
                         .EUt(GTValues.VHA[GTValues.UHV])
                         .CWUt(160)
                     )
@@ -50,23 +50,84 @@ ServerEvents.recipes(event => {
 
     // Machines
 
-        //
+        const assemblyThreadMachine = (type, core, circTier, nexusAmount, subMachines, miscInputs, toResearch, fluids, dur, cwu, eut) => {
+            event.recipes.gtceu.assembly_line(id(type))
+                .itemInputs(core, `${2 * nexusAmount}x #gtceu:circuits/${circTier}`)
+                .itemInputs(subMachines)
+                .itemInputs(`${nexusAmount}x kubejs:prisma_helical_nucleus`)
+                .itemInputs(miscInputs)
+                .inputFluids(fluids)
+                .itemOutputs(`gtceu:${type}`)
+                .duration(dur)
+                .stationResearch(
+                    researchRecipeBuilder => researchRecipeBuilder
+                        .researchStack(Item.of(toResearch))
+                        .EUt(eut / 4)
+                        .CWUt(cwu)
+                    )
+                .EUt(eut);
+        }
 
-        event.recipes.gtceu.assembly_line(id('multithreaded_component_synthesis_forge'))
-            .itemInputs('kubejs:core_casing', '36x #gtceu:circuits/uxv', '48x gtceu:component_nexus', '48x gtceu:component_part_hub',
-                '40x gtceu:uiv_assembler', '40x gtceu:uiv_scanner', '24x kubejs:prisma_helical_nucleus', '48x gtceu:uiv_fluid_regulator',
-                '24x gtceu:uiv_field_generator', '16x gtceu:uiv_sensor', '56x kubejs:uiv_micropower_router', '48x gtceu:nyanium_screw',
-                '64x kubejs:uipic_chip','64x kubejs:uipic_chip','64x kubejs:uipic_chip','64x kubejs:uipic_chip')
-            .inputFluids('gtceu:nyanium 2400000','gtceu:pure_dragon_breath 540000','gtceu:poly_34_ethylenedioxythiophene_polystyrene_sulfate 540000','gtceu:naquadated_soldering_alloy 432432')
-            .itemOutputs('gtceu:multithreaded_component_synthesis_forge')
-            .duration(248647)
-            .stationResearch(
-                researchRecipeBuilder => researchRecipeBuilder
-                    .researchStack(Item.of('gtceu:component_nexus'))
-                    .EUt(GTValues.VHA[GTValues.UIV])
-                    .CWUt(256)
-                )
-            .EUt(GTValues.VA[GTValues.UXV]);
+        assemblyThreadMachine('multithreaded_component_synthesis_forge','kubejs:core_casing','uxv', 24,['48x gtceu:component_nexus', '48x gtceu:component_part_hub',
+            '40x gtceu:uiv_assembler', '40x gtceu:uiv_scanner'], ['36x gtceu:uiv_field_generator','24x gtceu:uiv_fluid_regulator', 
+            '16x gtceu:uiv_sensor', '56x kubejs:uiv_micropower_router', '48x gtceu:nyanium_screw','64x kubejs:uipic_chip','64x kubejs:uipic_chip',
+            '64x kubejs:uipic_chip','64x kubejs:uipic_chip'], 'gtceu:component_nexus', ['gtceu:nyanium 2400000','gtceu:pure_dragon_breath 540000',
+            'gtceu:poly_34_ethylenedioxythiophene_polystyrene_sulfate 540000','gtceu:naquadated_soldering_alloy 432432'],248647,256,GTValues.VA[GTValues.UXV]);
+        
+        assemblyThreadMachine('aqueous_transformation_processing_center','gtceu:mythrotight_carbide_steel_frame','uxv', 8,['8x gtceu:uiv_extractor', '8x gtceu:uiv_canner',
+            '8x gtceu:uiv_fluid_solidifier'],['24x gtceu:uiv_fluid_regulator', '16x gtceu:uiv_field_generator', '24x kubejs:uiv_microfluidic_flow_valve', '4x gtceu:uiv_sensor',
+            '24x kubejs:uiv_micropower_router', '32x gtceu:mythrotight_carbide_steel_screw'],'gtceu:uiv_extractor',['gtceu:poly_34_ethylenedioxythiophene_polystyrene_sulfate 345168',
+            'gtceu:perfluoroelastomer_rubber 285964','gtceu:naquadated_soldering_alloy 221184'],26432,240,GTValues.VHA[GTValues.UXV]);
+        
+        assemblyThreadMachine('ascendant_engraving_matrix','gtceu:trikoductive_neutro_steel_frame','uxv', 9,['8x gtceu:uiv_laser_engraver','16x gtceu:runic_circuitry_assembling_station',
+            '16x gtceu:runic_inscribe_manipulate'],['24x gtceu:uiv_emitter', '16x gtceu:uiv_field_generator', '24x kubejs:uiv_catalyst_core', '4x gtceu:uiv_sensor',
+            '24x kubejs:uiv_micropower_router', '32x gtceu:trikoductive_neutro_steel_screw'],'gtceu:uiv_laser_engraver',['gtceu:poly_34_ethylenedioxythiophene_polystyrene_sulfate 345168',
+            'gtceu:perfluoroelastomer_rubber 285964','gtceu:naquadated_soldering_alloy 221184'],25221,240,GTValues.VHA[GTValues.UXV]);
+        
+        assemblyThreadMachine('byteforce_unified_incomparable_logistics_depot','gtceu:expetidalloy_d_17_frame','uxv', 12,['8x gtceu:uiv_assembler', 
+            '8x gtceu:uiv_circuit_assembler','8x gtceu:uiv_me_assembler'],['24x gtceu:uiv_robot_arm', '16x gtceu:uiv_sensor', '24x kubejs:uiv_computational_matrix', '4x gtceu:uiv_conveyor_module',
+            '24x kubejs:uiv_micropower_router', '32x gtceu:expetidalloy_d_17_screw'],'gtceu:uiv_assembler',['gtceu:poly_34_ethylenedioxythiophene_polystyrene_sulfate 345168',
+            'gtceu:perfluoroelastomer_rubber 285964','gtceu:naquadated_soldering_alloy 221184'],26893,240,GTValues.VHA[GTValues.UXV]);
+        
+        assemblyThreadMachine('electro_magnetic_material_ripper','gtceu:borealic_steel_frame','uxv', 10,['8x gtceu:uiv_electrolyzer', '8x gtceu:uiv_polarizer',
+            '8x gtceu:uiv_electromagnetic_separator'],['24x gtceu:uiv_conveyor_module', '16x gtceu:uiv_fluid_regulator', '24x kubejs:uiv_super_magnetic_core', '4x gtceu:uiv_emitter',
+            '24x kubejs:uiv_micropower_router', '32x gtceu:borealic_steel_screw'],'gtceu:uiv_electrolyzer',['gtceu:poly_34_ethylenedioxythiophene_polystyrene_sulfate 345168',
+            'gtceu:perfluoroelastomer_rubber 285964','gtceu:naquadated_soldering_alloy 221184'],25056,240,GTValues.VHA[GTValues.UXV]);
+        
+        assemblyThreadMachine('fermenting_arboreal_rejuvination_monstronsity','gtceu:soul_ascendant_cuperite_frame','uxv', 8,['64x gtceu:hydroponic_garden', '64x gtceu:tree_synthesizer',
+            '64x gtceu:industrial_fishery', '64x gtceu:composting_factory'],['24x gtceu:uiv_conveyor_module', '16x gtceu:uiv_robot_arm', '24x kubejs:uiv_microfluidic_flow_valve', 
+            '24x kubejs:uiv_micropower_router', '32x gtceu:soul_ascendant_cuperite_screw'],'gtceu:hydroponic_garden',['gtceu:poly_34_ethylenedioxythiophene_polystyrene_sulfate 345168',
+            'gtceu:perfluoroelastomer_rubber 285964','gtceu:naquadated_soldering_alloy 221184'],57118,240,GTValues.VHA[GTValues.UXV]);
+        
+        assemblyThreadMachine('gravitational_compression_chamber','gtceu:hvga_steel_frame','uxv', 12,['4x gtceu:uiv_bender', '4x gtceu:uiv_compressor', '4x gtceu:uiv_forge_hammer',
+            '4x gtceu:uiv_forming_press', '4x gtceu:uiv_packer'],['24x gtceu:uiv_electric_piston', '16x gtceu:uiv_conveyor_module','24x kubejs:uiv_micropower_router', 
+            '32x gtceu:hvga_steel_screw'],'gtceu:uiv_bender',['gtceu:poly_34_ethylenedioxythiophene_polystyrene_sulfate 345168','gtceu:tungsten_disulfide 285964',
+            'gtceu:naquadated_soldering_alloy 221184'],26004,240,GTValues.VHA[GTValues.UXV]);
+        
+        assemblyThreadMachine('material_annihilation_array','gtceu:zeroidic_trinate_steel_frame','uxv', 8,['8x gtceu:uiv_macerator', '8x gtceu:uiv_arc_furnace',
+            '16x gtceu:bulk_ore_processing_array'],['24x gtceu:uiv_electric_piston', '16x gtceu:uiv_conveyor_module', '24x kubejs:uiv_super_magnetic_core', '4x gtceu:uiv_robot_arm',
+            '24x kubejs:uiv_micropower_router', '32x gtceu:zeroidic_trinate_steel_screw'],'gtceu:uiv_macerator',['gtceu:poly_34_ethylenedioxythiophene_polystyrene_sulfate 345168',
+            'gtceu:tungsten_disulfide 285964','gtceu:naquadated_soldering_alloy 221184'],26658,240,GTValues.VHA[GTValues.UXV]);
+        
+        assemblyThreadMachine('molecular_inducing_xanadu','gtceu:melastrium_mox_frame','uxv', 8,['6x gtceu:uiv_mixer', '6x gtceu:uiv_autoclave',
+            '6x gtceu:uiv_ore_washer', '6x gtceu:uiv_chemical_bath'],['24x gtceu:uiv_electric_motor', '24x kubejs:uiv_transmission_assembly', '4x gtceu:uiv_fluid_regulator',
+            '24x kubejs:uiv_micropower_router', '32x gtceu:melastrium_mox_screw'],'gtceu:uiv_mixer',['gtceu:poly_34_ethylenedioxythiophene_polystyrene_sulfate 345168',
+            'gtceu:perfluoroelastomer_rubber 285964','gtceu:naquadated_soldering_alloy 221184'],25484,240,GTValues.VHA[GTValues.UXV]);
+        
+        assemblyThreadMachine('subatomic_particle_lattice_isolation_terminal','gtceu:ultispestalloy_cmsh_frame','uxv', 12,['8x gtceu:uiv_extractor', '8x gtceu:uiv_canner',
+            '8x gtceu:uiv_fluid_solidifier'],['24x gtceu:uiv_electric_piston', '16x gtceu:uiv_robot_arm', '24x kubejs:uiv_high_strength_panel', '4x gtceu:uiv_conveyor_module',
+            '24x kubejs:uiv_micropower_router', '32x gtceu:ultispestalloy_cmsh_screw'],'gtceu:uiv_extractor',['gtceu:poly_34_ethylenedioxythiophene_polystyrene_sulfate 345168',
+            'gtceu:tungsten_disulfide 285964','gtceu:naquadated_soldering_alloy 221184'],25651,240,GTValues.VHA[GTValues.UXV]);
+        
+        assemblyThreadMachine('superior_particulate_isolation_nexus','gtceu:vastaqalloy_cr_4200x_frame','uxv', 8,['8x gtceu:uiv_centrifuge', '8x gtceu:uiv_thermal_centrifuge',
+            '8x gtceu:uiv_sifter'],['24x gtceu:uiv_electric_motor', '16x gtceu:uiv_sensor', '24x kubejs:uiv_transmission_assembly', '4x gtceu:uiv_emitter',
+            '24x kubejs:uiv_micropower_router', '32x gtceu:vastaqalloy_cr_4200x_screw'],'gtceu:uiv_centrifuge',['gtceu:poly_34_ethylenedioxythiophene_polystyrene_sulfate 345168',
+            'gtceu:perfluoroelastomer_rubber 285964','gtceu:naquadated_soldering_alloy 221184'],27009,240,GTValues.VHA[GTValues.UXV]);
+        
+        assemblyThreadMachine('yielding_excression_advanced_seperation_transformator','gtceu:aerorelient_steel_frame','uxv', 8,['6x gtceu:uiv_fermenter', '6x gtceu:uiv_brewery',
+            '6x gtceu:uiv_fluid_heater', '6x gtceu:uiv_distillery'],['24x gtceu:uiv_fluid_regulator', '16x gtceu:uiv_sensor', '24x kubejs:uiv_microfluidic_flow_valve',
+            '24x kubejs:uiv_micropower_router', '32x gtceu:aerorelient_steel_screw'],'gtceu:uiv_fermenter',['gtceu:poly_34_ethylenedioxythiophene_polystyrene_sulfate 345168',
+            'gtceu:perfluoroelastomer_rubber 285964','gtceu:naquadated_soldering_alloy 221184'],25907,240,GTValues.VHA[GTValues.UXV]);
 
     // Helixes
 
@@ -96,7 +157,7 @@ ServerEvents.recipes(event => {
                 .itemOutputs(`start_core:uhv_${type}_thread_helix`)
                 .stationResearch(
                     researchRecipeBuilder => researchRecipeBuilder
-                        .researchStack(Item.of('kubejs:prismalic_helix_core'))
+                        .researchStack(Item.of('gtceu:lepton_resonant_thallium_antimonide_single_cable'))
                         .EUt(GTValues.VA[GTValues.UHV])
                         .CWUt(128)
                     )

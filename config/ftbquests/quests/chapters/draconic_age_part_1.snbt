@@ -2232,9 +2232,63 @@
 			dependencies: ["076F21506A7C19D5"]
 			id: "589A4AA6BF7C5097"
 			tasks: [{
-				id: "4FD2D9338A2024D0"
-				title: "Threading Multis"
-				type: "checkmark"
+				id: "6502CCEC5301617C"
+				item: {
+					Count: 1
+					id: "itemfilters:or"
+					tag: {
+						display: {
+							Name: "{\"bold\":false,\"italic\":false,\"underlined\":false,\"strikethrough\":false,\"obfuscated\":false,\"color\":\"#FFFFFF\",\"text\":\"Threading Multiblocks\"}"
+						}
+						items: [
+							{
+								Count: 1b
+								id: "gtceu:aqueous_transformation_processing_center"
+							}
+							{
+								Count: 1b
+								id: "gtceu:gravitational_compression_chamber"
+							}
+							{
+								Count: 1b
+								id: "gtceu:yielding_excression_advanced_seperation_transformator"
+							}
+							{
+								Count: 1b
+								id: "gtceu:fermenting_arboreal_rejuvination_monstronsity"
+							}
+							{
+								Count: 1b
+								id: "gtceu:material_annihilation_array"
+							}
+							{
+								Count: 1b
+								id: "gtceu:ascendant_engraving_matrix"
+							}
+							{
+								Count: 1b
+								id: "gtceu:superior_particulate_isolation_nexus"
+							}
+							{
+								Count: 1b
+								id: "gtceu:electro_magnetic_material_ripper"
+							}
+							{
+								Count: 1b
+								id: "gtceu:byteforce_unified_incomparable_logistics_depot"
+							}
+							{
+								Count: 1b
+								id: "gtceu:molecular_inducing_xanadu"
+							}
+							{
+								Count: 1b
+								id: "gtceu:subatomic_particle_lattice_isolation_terminal"
+							}
+						]
+					}
+				}
+				type: "item"
 			}]
 			x: 10.0d
 			y: -2.0d
