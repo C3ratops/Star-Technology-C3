@@ -907,6 +907,8 @@
     "block.gtceu.ancient_refinement_center.tooltip.0": "§7Ancient Technology utilized to combine all the needed resource generators.",
     "block.gtceu.ancient_refinement_center.tooltip.1": "Can use §3Parallel§r hatches§r, has §cSubtick Parallels§r, and §2Bulking",
     "gtceu.aqueous_void_excavation": "Aqueous Void Excavation",
+    "gtceu.bulk_void_excavation": "Bulk Void Excavation",
+    "gtceu.bulk_rock_filtrator": "Bulk Rock Filtration",
 
     "gtceu.draco_infusion": "§dDraconic Infusion",
     "block.gtceu.draco_infusion": "§dDraconic Infusion Array",

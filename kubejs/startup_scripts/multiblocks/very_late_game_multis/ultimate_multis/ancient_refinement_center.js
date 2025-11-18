@@ -6,13 +6,25 @@ GTCEuStartupEvents.registry('gtceu:recipe_type', event => {
         .setProgressBar(GuiTextures.PROGRESS_BAR_EXTRACT , FillDirection.LEFT_TO_RIGHT)
         .setSound(GTSoundEntries.MINER);
 
+    event.create('bulk_rock_filtrator')
+        .category('resource_production')
+        .setMaxIOSize(2, 9, 1, 0)
+        .setProgressBar(GuiTextures.PROGRESS_BAR_SIFT , FillDirection.LEFT_TO_RIGHT)
+        .setSound(GTSoundEntries.MACERATOR);
+
+    event.create('bulk_void_excavation')
+        .category('resource_production')
+        .setMaxIOSize(0, 6, 1, 2)
+        .setProgressBar(GuiTextures.PROGRESS_BAR_EXTRACT , FillDirection.LEFT_TO_RIGHT)
+        .setSound(GTSoundEntries.MINER);
+
 });
 
 GTCEuStartupEvents.registry('gtceu:machine', event => {
 
     event.create('ancient_refinement_center', 'multiblock')
         .rotationState(RotationState.NON_Y_AXIS)
-        .recipeTypes(['industrial_barrel_aqueous', 'rock_filtrator', 'large_sieve', 'void_excavation', 'aqueous_void_excavation'])
+        .recipeTypes(['industrial_barrel_aqueous', 'bulk_rock_filtrator', 'large_sieve', 'bulk_void_excavation', 'aqueous_void_excavation'])
         .recipeModifiers([GTRecipeModifiers.PARALLEL_HATCH, $StarTRecipeModifiers.BULK_PROCESSING, GTRecipeModifiers.OC_NON_PERFECT_SUBTICK])
         .appearanceBlock(() => Block.getBlock('kubejs:enriched_naquadah_machine_casing'))
         .pattern(definition => FactoryBlockPattern.start()
