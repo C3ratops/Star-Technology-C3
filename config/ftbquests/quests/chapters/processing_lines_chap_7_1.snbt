@@ -1072,6 +1072,7 @@
 				{
 					id: "6DF4A6043689D13B"
 					item: "gtceu:hot_enriched_estalt_ingot"
+					optional_task: true
 					type: "item"
 				}
 				{
